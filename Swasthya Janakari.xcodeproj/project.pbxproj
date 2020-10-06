@@ -38,6 +38,8 @@
 		FA22153C251930C9005A1B40 /* FirstHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */; };
 		FA555AD52527419100EF85A6 /* cellChartVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA555AD32527419100EF85A6 /* cellChartVCCollectionViewCell.swift */; };
 		FA555AD62527419100EF85A6 /* cellChartVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */; };
+		FAEE419E252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */; };
+		FAEE419F252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeScreen.swift; sourceTree = "<group>"; };
 		FA555AD32527419100EF85A6 /* cellChartVCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellChartVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cellChartVCCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smallCellChartVCCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = smallCellChartVCCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				3F80FBF72506358F00A26808 /* phoneInfo.swift */,
 				FA555AD32527419100EF85A6 /* cellChartVCCollectionViewCell.swift */,
 				FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */,
+				FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */,
+				FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA555AD62527419100EF85A6 /* cellChartVCCollectionViewCell.xib in Resources */,
+				FAEE419F252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib in Resources */,
 				3FB5DADA24F4FEDC005AD650 /* LaunchScreen.storyboard in Resources */,
 				3FB5DAD724F4FEDC005AD650 /* Assets.xcassets in Resources */,
 				3FB5DAD524F4FECF005AD650 /* Main.storyboard in Resources */,
@@ -330,6 +337,7 @@
 				FA555AD52527419100EF85A6 /* cellChartVCCollectionViewCell.swift in Sources */,
 				3F98C7E72502B5C800AEB41C /* newsCell.swift in Sources */,
 				3F98DAAD25071D8D00D36C7E /* chartVC.swift in Sources */,
+				FAEE419E252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift in Sources */,
 				3FEC609224FD9E4300678FFA /* thirdVC.swift in Sources */,
 				3FD50FB125001392007FE3DE /* cellInfo.swift in Sources */,
 				3FB5DAE524F50045005AD650 /* firstVC.swift in Sources */,

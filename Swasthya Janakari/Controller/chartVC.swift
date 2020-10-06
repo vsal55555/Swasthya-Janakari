@@ -32,15 +32,17 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+       // layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.scrollDirection = .vertical
         
         
-        layout.itemSize = CGSize(width: view .frame.width/2.2, height: view.frame.size.width/2.2)
+        //layout.itemSize = CGSize(width: view .frame.width/2.2, height: view.frame.size.width/2.2)
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         collectionView?.register(cellChartVCCollectionViewCell.nib(), forCellWithReuseIdentifier: cellChartVCCollectionViewCell.identifier)
+        
+        collectionView?.register(smallCellChartVCCollectionViewCell.nib(), forCellWithReuseIdentifier: smallCellChartVCCollectionViewCell.identifier)
         
         //HeaderCollectionReusableView
         collectionView?.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
@@ -114,21 +116,43 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
-    }
+        }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return 4
+        if section == 0 {
+            return 3
+        }
+        if section == 1 {
+            return 4
+        }
+        return 4
      }
      
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: smallCellChartVCCollectionViewCell.identifier, for: indexPath) //as cellChartVCCollectionViewCell?
+            cell.clipsToBounds = true
+            cell.layer.cornerRadius = 15
+            return cell
+            
+        }
+        if indexPath.section == 1 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) //as cellChartVCCollectionViewCell?
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 15
         return cell
      }
-    
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) //as cellChartVCCollectionViewCell?
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 15
+        return cell
+        
+    }
     
     
     //MARK: -DEQUEUE THE HEADER AND PROVIDE SIZE FOR THE HEADER
@@ -136,38 +160,16 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         //MARK: - way to check in what section you are getting the header/ footer or dequening
         //first section
-         if indexPath.section == 1 {
-            
-            
-            
-           func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-               return 3
-           }
-            
-            if kind == UICollectionView.elementKindSectionFooter {
-                let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterCollectionReusableView.identifier, for: indexPath) as! FooterCollectionReusableView
-                
-                footer.configure()
-                return footer
-                
-            }
-            //MARK: -HEADER COLECTIONRESUABLEVIEW
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
-            
-            header.configure()
-            return header
-            
-        }
-        //end first section
         
-        //MARK: -Footer COLECTIONRESUABLEVIEW
+        
+   /*     //MARK: -Footer COLECTIONRESUABLEVIEW
         if kind == UICollectionView.elementKindSectionFooter {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterCollectionReusableView.identifier, for: indexPath) as! FooterCollectionReusableView
             
             footer.configure()
             return footer
             
-        }
+        }  */
         //MARK: -HEADER COLECTIONRESUABLEVIEW
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
         
@@ -176,10 +178,31 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 200)
+        return CGSize(width: view.frame.size.width, height: 50)
     }
+    /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
          return CGSize(width: view.frame.size.width, height: 200)
+    }
+    */
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if section == 0 {
+           return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+        }
+        if section == 1 {
+                  return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+               }
+        return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return CGSize(width: (view.frame.width/3) - 16, height: 100)
+        }
+        if indexPath.section == 1 {
+            return  CGSize(width: view .frame.width/2.2, height: view.frame.size.width/4.4)
+        }
+        return  CGSize(width: view .frame.width/2.2, height: view.frame.size.width/4.4)
     }
 }
     

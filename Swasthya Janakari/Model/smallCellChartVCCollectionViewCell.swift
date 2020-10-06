@@ -1,18 +1,18 @@
 //
-//  cellChartVCCollectionViewCell.swift
-//  PokedexMVC
+//  smallCellChartVCCollectionViewCell.swift
+//  Swasthya Janakari
 //
-//  Created by macbook on 10/2/20.
+//  Created by macbook on 10/6/20.
 //  Copyright © 2020 BSAL-MAC. All rights reserved.
 //
 
 import UIKit
 
-class cellChartVCCollectionViewCell: UICollectionViewCell {
+class smallCellChartVCCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "cellChartVCCollectionViewCell"
+    static let identifier = "smallCellChartVCCollectionViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: "cellChartVCCollectionViewCell", bundle: nil)
+        return UINib(nibName: "smallCellChartVCCollectionViewCell", bundle: nil)
     }
     
     let LowerLabel : UILabel = {
@@ -38,7 +38,7 @@ class cellChartVCCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroundColor = .link
+        backgroundColor = .green
         addSubview(UpperLabel)
         addSubview(LowerLabel)
         
@@ -54,5 +54,7 @@ class cellChartVCCollectionViewCell: UICollectionViewCell {
         UpperLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         UpperLabel.anchors(top: topAnchor, topPad: 18, bottom: nil, bottomPad: 0, left: nil, leftPad: 0, right: nil, rightPad: 0, height: 10, width: 0)
     }
+    
+    
 
 }
