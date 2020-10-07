@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import SwiftMessages
+import SwiftMessages   //package provides the reachability class for internet connectivity
 //private let reuseIdentifier = "cellChartVCCollectionViewCell" //minimize the possibility of human error
 
 
 class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
     
     
@@ -58,6 +59,7 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
        
     }
     
+     //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR AND RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
         
@@ -69,6 +71,7 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
            handleReachability()
        }
        
+    //MARK: -  REACHABILITY CLASS METHODS 
        fileprivate func handleReachability() {
            NotificationCenter.default.addObserver(forName: .reachabilityChanged, object: reachability, queue: .main) { (notification) in
                if let MyRechability = notification.object as? Reachability {
@@ -84,6 +87,7 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
            }
        }
        
+    //MARK: -  REACHABILITY CLASS METHODS HELPS TO RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
        override func viewWillDisappear(_ animated: Bool) {
            super.viewWillDisappear(animated)
            reachability?.stopNotifier()

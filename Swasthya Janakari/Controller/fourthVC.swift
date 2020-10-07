@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import SwiftMessages
+import SwiftMessages   //package provides the reachability class for internet connectivity
 
 class fourthVC: UIViewController {
     
+    //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
     var tableview = UITableView()
     var cellInfos: [cellInfo] = []
@@ -31,6 +32,8 @@ class fourthVC: UIViewController {
     configureTableView()
         
 }
+    
+     //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR AND RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            do {
@@ -41,6 +44,7 @@ class fourthVC: UIViewController {
            handleReachability()
        }
        
+    //MARK: -  REACHABILITY CLASS METHODS 
        fileprivate func handleReachability() {
            NotificationCenter.default.addObserver(forName: .reachabilityChanged, object: reachability, queue: .main) { (notification) in
                if let MyRechability = notification.object as? Reachability {
@@ -56,6 +60,7 @@ class fourthVC: UIViewController {
            }
        }
        
+    //MARK: -  REACHABILITY CLASS METHODS HELPS TO RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
        override func viewWillDisappear(_ animated: Bool) {
            super.viewWillDisappear(animated)
            reachability?.stopNotifier()

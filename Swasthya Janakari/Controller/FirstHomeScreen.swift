@@ -8,12 +8,12 @@
 
 import Foundation
 import UIKit
-import SwiftMessages
+import SwiftMessages   //package provides the reachability class for internet connectivity
 
 
 class firstHomeScreen: UIViewController {
     
-    
+    //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
     
     //MARK: FIRST CONTAINER VIEW
@@ -347,6 +347,7 @@ class firstHomeScreen: UIViewController {
         
     }
     
+     //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         do {
@@ -357,6 +358,7 @@ class firstHomeScreen: UIViewController {
         handleReachability()
     }
     
+    //MARK: -  REACHABILITY CLASS METHODS
     fileprivate func handleReachability() {
         NotificationCenter.default.addObserver(forName: .reachabilityChanged, object: reachability, queue: .main) { (notification) in
             if let MyRechability = notification.object as? Reachability {
@@ -372,7 +374,7 @@ class firstHomeScreen: UIViewController {
         }
     }
     
-    
+    //MARK: -  REACHABILITY CLASS METHODS HELPS TO RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
     override func viewWillDisappear(_ animated: Bool) {
            super.viewWillDisappear(animated)
            reachability?.stopNotifier()
