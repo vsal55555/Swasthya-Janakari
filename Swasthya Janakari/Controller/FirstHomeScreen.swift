@@ -16,6 +16,8 @@ class firstHomeScreen: UIViewController {
     //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
     
+    
+    
     //MARK: FIRST CONTAINER VIEW
     lazy var containerView1: UIView = {
         let view = UIView()
@@ -77,6 +79,7 @@ class firstHomeScreen: UIViewController {
             
             //MARK: -ADD NUMBERUPPERLABEL1 TO Second CONTAINERVIEW
             view .addSubview(numberupperTitleLabel1)
+            //numberupperTitleLabel1.text = myArrayfornumberupperTitleLabel1
             numberupperTitleLabel1.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             numberupperTitleLabel1.homeAnchor(left: view.leftAnchor, paddingLeft: 16)
             
@@ -89,6 +92,7 @@ class firstHomeScreen: UIViewController {
             
             //MARK: -ADD NUMBERUPPERLABEL2 TO Second CONTAINERVIEW
             view .addSubview(numberupperTitleLabel2)
+            //numberupperTitleLabel2.text = myArrayfornumberupperTitleLabel2
             numberupperTitleLabel2.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             numberupperTitleLabel2.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             numberupperTitleLabel2.homeAnchor(top: secondlowerTitleLabel.bottomAnchor, left: view.leftAnchor, paddingTop: 12, paddingLeft: 16)
@@ -102,6 +106,7 @@ class firstHomeScreen: UIViewController {
             
             //MARK: -ADD NUMBERUPPERLABEL3 TO Second CONTAINERVIEW
             view .addSubview(numberupperTitleLabel3)
+            //numberupperTitleLabel3.text = myArrayfornumberupperTitleLabel3
             numberupperTitleLabel3.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
             numberupperTitleLabel3.homeAnchor(right: view.rightAnchor, paddingRight: 16)
             
@@ -218,55 +223,52 @@ class firstHomeScreen: UIViewController {
         return label
     }()
     
-    let numberupperTitleLabel1: UILabel = {
+    let numberupperTitleLabel1: UILabel = {                         //front upper label 1 ****number****
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "१४३४"
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textColor = .white
         return label
     }()
     
-    let numberlowerTitleLabel1: UILabel = {
+    let numberlowerTitleLabel1: UILabel = {                         //front lower label 1
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "मवपनवम"
+        label.text = "New Cases"
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textColor = .white
         return label
     }()
     
-    let numberupperTitleLabel2: UILabel = {
+    let numberupperTitleLabel2: UILabel = {                         //front upper label 2  ****number****
            let label = UILabel()
            label.textAlignment = .center
-           label.text = "१४३४"
            label.font = UIFont.boldSystemFont(ofSize: 22)
            label.textColor = .white
            return label
        }()
     
-    let numberlowerTitleLabel2: UILabel = {
+    let numberlowerTitleLabel2: UILabel = {                            //front lower label 2
             let label = UILabel()
             label.textAlignment = .center
-            label.text = "मवपनवम"
+            label.text = "Recovered"
             label.font = UIFont.boldSystemFont(ofSize: 22)
             label.textColor = .white
             return label
         }()
     
-    let numberupperTitleLabel3: UILabel = {
+    let numberupperTitleLabel3: UILabel = {                            //front upper label 3   ****number****
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "१४३४"
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textColor = .white
         return label
     }()
     
-    let numberlowerTitleLabel3: UILabel = {
+    let numberlowerTitleLabel3: UILabel = {                            //front lower label 3
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "१४३४"
+        label.text = "Deaths"
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textColor = .white
         return label
@@ -327,12 +329,23 @@ class firstHomeScreen: UIViewController {
           return button
       }()
     
+    var myArrayfornumberupperTitleLabel1: String = ""
+    var myArrayfornumberupperTitleLabel2: String = ""
+    var myArrayfornumberupperTitleLabel3: String = ""
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
-        
+        print("i'm in first home screen \(appDelegate.myArrayfornumberupperTitleLabel1)")
+        print(appDelegate.myArrayfornumberupperTitleLabel2)
+        print(appDelegate.myArrayfornumberupperTitleLabel3)
        
+        numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
+        numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
+        numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel3
+        
         view.addSubview(containerView1)
          containerView1.centerXAnchor.constraint(equalTo: view.centerXAnchor)
          containerView1.homeAnchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 8, paddingRight: 8, width: view.frame.width - 10, height: 200)
@@ -351,6 +364,10 @@ class firstHomeScreen: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         do {
+            print("i'm in first home screen \(appDelegate.myArrayfornumberupperTitleLabel1)")
+            numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
+            numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel3
+            numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel2
             try reachability?.startNotifier()
         } catch let error {
             print(error)
@@ -409,8 +426,62 @@ class firstHomeScreen: UIViewController {
          }
          
          @objc func button1SignIn(){
-                 print("clicked me")
+    
+            // create an actionSheet
+            let actionSheetController: UIAlertController = UIAlertController(title: "Swasthya Janakari", message: "Please call on following number", preferredStyle: .actionSheet)
+
+            // create an action
+            let firstAction: UIAlertAction = UIAlertAction(title: "Call to 9849255834", style: .default) { action -> Void in
+
+                print("First Action pressed")
+                self.makePhoneCall(phoneNumber: "9849255834")
+            }
+
+            let secondAction: UIAlertAction = UIAlertAction(title: "Call to 9851255839", style: .default) { action -> Void in
+
+                print("Second Action pressed")
+                self.makePhoneCall(phoneNumber: "9851255839")
+            }
+            let thirdAction: UIAlertAction = UIAlertAction(title: "Call to 9851255837", style: .default) { action -> Void in
+
+                print("Second Action pressed")
+                self.makePhoneCall(phoneNumber: "9851255837")
+            }
+
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+
+            // add actions
+            actionSheetController.addAction(firstAction)
+            actionSheetController.addAction(secondAction)
+            actionSheetController.addAction(thirdAction)
+            actionSheetController.addAction(cancelAction)
+
+            // present an actionSheet...
+            // present(actionSheetController, animated: true, completion: nil)   // doesn't work for iPad
+
+            //actionSheetController.popoverPresentationController?.sourceView = yourSourceViewName // works for both iPhone & iPad
+
+            present(actionSheetController, animated: true) {
+                print("option menu presented")
+            }
+
+            
+            
          }
+   
+    func makePhoneCall(phoneNumber: String) {
+
+        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+
+            let alert = UIAlertController(title: ("Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+                UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+            }))
+
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
         @objc func button2SignIn(){
             print("clicked me")
@@ -421,6 +492,7 @@ class firstHomeScreen: UIViewController {
     
         @objc func button3SignIn(){
         print("clicked me")
+          
         }
         
         //MARK: -NAVIGATION CONTROLLER PART

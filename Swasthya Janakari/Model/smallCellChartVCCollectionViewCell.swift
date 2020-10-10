@@ -10,6 +10,7 @@ import UIKit
 
 class smallCellChartVCCollectionViewCell: UICollectionViewCell {
     
+    
     static let identifier = "smallCellChartVCCollectionViewCell"
     static func nib() -> UINib {
         return UINib(nibName: "smallCellChartVCCollectionViewCell", bundle: nil)
@@ -20,7 +21,6 @@ class smallCellChartVCCollectionViewCell: UICollectionViewCell {
         lb.textColor = UIColor.lightGray
         lb.font = UIFont.systemFont(ofSize: 22)
         lb.font = UIFont.boldSystemFont(ofSize: 22)
-        lb.text = "९६४३२२३३५६"
      
         return lb
     }()
@@ -30,17 +30,18 @@ class smallCellChartVCCollectionViewCell: UICollectionViewCell {
            lb.textColor = UIColor.lightGray
            lb.font = UIFont.systemFont(ofSize: 22)
            lb.font = UIFont.boldSystemFont(ofSize: 22)
-           lb.text = "पदलन"
-        
            return lb
        }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
         backgroundColor = .green
         addSubview(UpperLabel)
         addSubview(LowerLabel)
+       
+       
         
         LowerLabel.translatesAutoresizingMaskIntoConstraints = false
         //emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -49,6 +50,7 @@ class smallCellChartVCCollectionViewCell: UICollectionViewCell {
         //TitleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
         //TitleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
         
+        
         UpperLabel.translatesAutoresizingMaskIntoConstraints = false
         //emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         UpperLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -56,5 +58,5 @@ class smallCellChartVCCollectionViewCell: UICollectionViewCell {
     }
     
     
-
 }
+

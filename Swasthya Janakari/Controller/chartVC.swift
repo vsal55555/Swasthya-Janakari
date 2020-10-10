@@ -26,16 +26,46 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     let cellTitle = [("Bishal"), ("Puja"), ("Hari")]
     let cellImage = [UIImage(named: "dice_1"), UIImage(named: "dice_2"), UIImage(named: "dice_3")]
     
-    //Mark: Tabbar Controller
+    var upperTitle: [upperTitleCell] = []
+    var myArrayforUpperTitle = [String]()
+    let lowerTitle = ["Tested", "Deaths", "Recovered"]
     
+    var upperSquareTitle: [upperSquareTitleCell] = []
+    var myArrayforUpperSquareTitle = [String]()
+    let upperTitleSquare = ["Tested", "Deaths", "Recovered", "Infected"]
+    
+    var lowerSquareTitle: [lowerSquareTitleCell] = []
+    var myArrayforlowerSquareTitle = [String]()
+    let lowerTitleSquare = ["Tested", "Deaths", "Recovered", "Infected"]
+    
+    //Mark: Tabbar Controller
+    var myArrayfornumberupperTitleLabel1: String = ""
     var collectionView: UICollectionView?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         let layout = UICollectionViewFlowLayout()
        // layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.scrollDirection = .vertical
         
+        print("i'm in charVC\(appDelegate.myArrayfornumberupperTitleLabel1)")
+        myArrayforUpperTitle = appDelegate.myArrayforUpperTitle
+        myArrayforUpperSquareTitle = appDelegate.myArrayforUpperSquareTitle
+        myArrayforlowerSquareTitle = appDelegate.myArrayforlowerSquareTitle
+        /*
+        getData(completed: { data in
+          
+            
+            self.myArrayforUpperTitle.append(data[0].karnali_death)
+            self.myArrayforUpperTitle.append(data[0].karnali_recovered)
+            self.myArrayforUpperTitle.append(data[0].karnali_tested)
+          
+           
+        })  */
         
         //layout.itemSize = CGSize(width: view .frame.width/2.2, height: view.frame.size.width/2.2)
         
@@ -58,6 +88,27 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
       //  configureViewComponents()
        
     }
+    /*
+    func getData(completed: @escaping ([upperTitleCell]) -> ()) {
+            print("*****************task is starting******************")
+            let url = URL(string: "http://covid.hostingofprologic.com/api/statics/listby")
+            
+            URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                if error == nil {
+                    //var result = [upperTitleCell]()
+                    do {
+                        self.upperTitle = try JSONDecoder().decode([upperTitleCell].self, from: data!)
+                        DispatchQueue.main.async {
+                            completed(self.upperTitle)
+                        }
+                    } catch {
+                            print("Json Error")
+                    }
+                }
+            }.resume()
+            print("*****************task ended******************")
+        }  */
+
     
      //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR AND RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
     override func viewWillAppear(_ animated: Bool) {
@@ -139,19 +190,27 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: smallCellChartVCCollectionViewCell.identifier, for: indexPath) //as cellChartVCCollectionViewCell?
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: smallCellChartVCCollectionViewCell.identifier, for: indexPath) as! smallCellChartVCCollectionViewCell
+            cell.LowerLabel.text = lowerTitle[indexPath.row]
+            cell.UpperLabel.text = myArrayforUpperTitle[indexPath.row]
+            
             cell.clipsToBounds = true
             cell.layer.cornerRadius = 15
             return cell
             
         }
         if indexPath.section == 1 {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) //as cellChartVCCollectionViewCell?
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) as! cellChartVCCollectionViewCell
+            cell.LowerLabel.text = upperTitleSquare[indexPath.row]
+            cell.UpperLabel.text = myArrayforUpperSquareTitle[indexPath.row]
+            
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 15
         return cell
      }
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) //as cellChartVCCollectionViewCell?
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) as! cellChartVCCollectionViewCell
+        cell.LowerLabel.text = lowerTitleSquare[indexPath.row]
+        cell.UpperLabel.text = myArrayforlowerSquareTitle[indexPath.row]
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 15
         return cell

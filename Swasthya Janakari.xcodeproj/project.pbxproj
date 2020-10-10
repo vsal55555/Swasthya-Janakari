@@ -33,11 +33,15 @@
 		3FEC609224FD9E4300678FFA /* thirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC609124FD9E4200678FFA /* thirdVC.swift */; };
 		3FEC609424FD9E9F00678FFA /* fourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC609324FD9E9F00678FFA /* fourthVC.swift */; };
 		B5A0A3CDD13BE9808D653D1F /* Pods_PokedexMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */; };
+		FA179A1A253226ED00FBE3C1 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA179A19253226ED00FBE3C1 /* Alerts.swift */; };
 		FA18D5E9252C48DA00AA9DB2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18D5E8252C48DA00AA9DB2 /* Reachability.swift */; };
 		FA18D5EB252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */; };
 		FA22153C251930C9005A1B40 /* FirstHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */; };
+		FA277AD3252F09AE004053B8 /* VerifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277AD2252F09AE004053B8 /* VerifyAPI.swift */; };
 		FA555AD52527419100EF85A6 /* cellChartVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA555AD32527419100EF85A6 /* cellChartVCCollectionViewCell.swift */; };
 		FA555AD62527419100EF85A6 /* cellChartVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */; };
+		FA7D3C47252D952500687279 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D3C46252D952500687279 /* DataStructures.swift */; };
+		FA7D3C49252D97B900687279 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D3C48252D97B900687279 /* RequestHelper.swift */; };
 		FAEE419E252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */; };
 		FAEE419F252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -73,11 +77,15 @@
 		3FEC609324FD9E9F00678FFA /* fourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourthVC.swift; sourceTree = "<group>"; };
 		E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokedexMVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA26787006E35A9E34C635A7 /* Pods-PokedexMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokedexMVC.debug.xcconfig"; path = "Target Support Files/Pods-PokedexMVC/Pods-PokedexMVC.debug.xcconfig"; sourceTree = "<group>"; };
+		FA179A19253226ED00FBE3C1 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		FA18D5E8252C48DA00AA9DB2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeScreen.swift; sourceTree = "<group>"; };
+		FA277AD2252F09AE004053B8 /* VerifyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyAPI.swift; sourceTree = "<group>"; };
 		FA555AD32527419100EF85A6 /* cellChartVCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellChartVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cellChartVCCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA7D3C46252D952500687279 /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		FA7D3C48252D97B900687279 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
 		FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smallCellChartVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = smallCellChartVCCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +154,7 @@
 		3FB5DAE124F4FF18005AD650 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA7D3C46252D952500687279 /* DataStructures.swift */,
 				3FD50FB025001392007FE3DE /* cellInfo.swift */,
 				3F98C7E42502A9A000AEB41C /* newsInfo.swift */,
 				3FE20B0A2503EB2200EE20BC /* hospitalInfo.swift */,
@@ -168,6 +177,7 @@
 				3FE20B0C2503EFC800EE20BC /* hospitalCell.swift */,
 				3F80FBF92506367800A26808 /* phoneCell.swift */,
 				FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */,
+				FA179A19253226ED00FBE3C1 /* Alerts.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +204,8 @@
 				FA18D5E8252C48DA00AA9DB2 /* Reachability.swift */,
 				3FD50FA924FEC872007FE3DE /* UIView+Ext.swift */,
 				3FD50FAE2500113F007FE3DE /* Constants.swift */,
+				FA277AD2252F09AE004053B8 /* VerifyAPI.swift */,
+				FA7D3C48252D97B900687279 /* RequestHelper.swift */,
 			);
 			name = "Extensions-Utilities";
 			sourceTree = "<group>";
@@ -336,11 +348,15 @@
 				3FE2E6CD250698B700AD2852 /* zeroCellVC.swift in Sources */,
 				FA555AD52527419100EF85A6 /* cellChartVCCollectionViewCell.swift in Sources */,
 				3F98C7E72502B5C800AEB41C /* newsCell.swift in Sources */,
+				FA277AD3252F09AE004053B8 /* VerifyAPI.swift in Sources */,
+				FA179A1A253226ED00FBE3C1 /* Alerts.swift in Sources */,
 				3F98DAAD25071D8D00D36C7E /* chartVC.swift in Sources */,
 				FAEE419E252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift in Sources */,
 				3FEC609224FD9E4300678FFA /* thirdVC.swift in Sources */,
 				3FD50FB125001392007FE3DE /* cellInfo.swift in Sources */,
+				FA7D3C49252D97B900687279 /* RequestHelper.swift in Sources */,
 				3FB5DAE524F50045005AD650 /* firstVC.swift in Sources */,
+				FA7D3C47252D952500687279 /* DataStructures.swift in Sources */,
 				3FD50FAA24FEC872007FE3DE /* UIView+Ext.swift in Sources */,
 				3FB5DAD024F4FECF005AD650 /* SceneDelegate.swift in Sources */,
 				3F80FBFA2506367800A26808 /* phoneCell.swift in Sources */,

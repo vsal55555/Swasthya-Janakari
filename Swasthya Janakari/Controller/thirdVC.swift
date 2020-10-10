@@ -16,7 +16,7 @@ class thirdVC: UIViewController {
     let reachability = Reachability()
     
     var tableview = UITableView()
-  //  var newsInfos: [newsInfo] = []
+    var newsInfos: [newsInfo] = []
     let cellSpacingHeight: CGFloat = 10
     var news = [newsInfo]()
 
@@ -126,6 +126,7 @@ class thirdVC: UIViewController {
         }.resume()
         print("*****************task ended******************")
     }
+   
 }
 
 extension thirdVC: UITableViewDelegate, UITableViewDataSource {

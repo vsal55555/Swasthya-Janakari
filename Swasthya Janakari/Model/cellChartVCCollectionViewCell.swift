@@ -20,7 +20,7 @@ class cellChartVCCollectionViewCell: UICollectionViewCell {
         lb.textColor = UIColor.lightGray
         lb.font = UIFont.systemFont(ofSize: 22)
         lb.font = UIFont.boldSystemFont(ofSize: 22)
-        lb.text = "९६४३२२३३५६"
+        
      
         return lb
     }()
@@ -30,7 +30,7 @@ class cellChartVCCollectionViewCell: UICollectionViewCell {
            lb.textColor = UIColor.lightGray
            lb.font = UIFont.systemFont(ofSize: 22)
            lb.font = UIFont.boldSystemFont(ofSize: 22)
-           lb.text = "पदलन"
+          
         
            return lb
        }()
@@ -41,7 +41,7 @@ class cellChartVCCollectionViewCell: UICollectionViewCell {
         backgroundColor = .link
         addSubview(UpperLabel)
         addSubview(LowerLabel)
-        
+        getdata()
         LowerLabel.translatesAutoresizingMaskIntoConstraints = false
         //emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         LowerLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -53,6 +53,9 @@ class cellChartVCCollectionViewCell: UICollectionViewCell {
         //emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         UpperLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         UpperLabel.anchors(top: topAnchor, topPad: 18, bottom: nil, bottomPad: 0, left: nil, leftPad: 0, right: nil, rightPad: 0, height: 10, width: 0)
+    }
+    func getdata() {
+        
     }
 
 }

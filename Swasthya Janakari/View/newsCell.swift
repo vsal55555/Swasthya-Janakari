@@ -35,6 +35,7 @@ class newsCell: UITableViewCell {
         let urlString = newsinfo.image
         let url = URL(string: urlString)
         tableImageView.downloaded(from: url!)
+        
         tableHeadTitleLabel.text = newsinfo.title
         tableTailTitleLabel.text = newsinfo.content
     }
@@ -86,6 +87,7 @@ extension UIImageView {
                 let image = UIImage(data: data)
                 else { return }
             DispatchQueue.main.async() { [weak self] in
+                
                 self?.image = image
             }
         }.resume()
