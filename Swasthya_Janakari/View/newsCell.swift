@@ -32,10 +32,11 @@ class newsCell: UITableViewCell {
     }
     
     func set(newsinfo: newsInfo) {
+        
         let urlString = newsinfo.image
         let url = URL(string: urlString)
+      
         tableImageView.downloaded(from: url!)
-        
         tableHeadTitleLabel.text = newsinfo.title
         tableTailTitleLabel.text = newsinfo.content
     }
@@ -85,7 +86,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+            else { return }
             DispatchQueue.main.async() { [weak self] in
                 
                 self?.image = image
@@ -93,7 +94,12 @@ extension UIImageView {
         }.resume()
     }
     func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
+        
+        
+        
+         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
     }
+
 }
+//guard let url = URL(string: link) else { return }

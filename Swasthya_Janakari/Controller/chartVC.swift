@@ -49,7 +49,7 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         
         let layout = UICollectionViewFlowLayout()
-       // layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        //layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.scrollDirection = .vertical
         
         print("i'm in charVC\(appDelegate.myArrayfornumberupperTitleLabel1)")

@@ -16,6 +16,16 @@ class firstHomeScreen: UIViewController {
     //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
     
+    //MARK: =SCROLLVIEW INIT
+    lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+    lazy var scrollView: UIScrollView = {
+        let view = UIScrollView(frame: .zero)
+        view.backgroundColor = .white
+        view.frame = self.view.bounds
+        view.contentSize = contentViewSize
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     
     //MARK: FIRST CONTAINER VIEW
@@ -343,8 +353,39 @@ class firstHomeScreen: UIViewController {
         print(appDelegate.myArrayfornumberupperTitleLabel3)
        
         numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
+        numberupperTitleLabel1.textColor = .orange
         numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
+        numberupperTitleLabel2.textColor = .red
         numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel3
+        numberupperTitleLabel3.textColor = .green
+        
+        
+        //MARK:- SCROLLVIEW ADDING AND CONSTRAINING
+              view.addSubview(scrollView)
+              scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+              scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+              scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+              scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        //MARK: =ADDING SUBVIEWS IN SCROLLVIEWS
+        scrollView.addSubview(containerView1)
+        containerView1.clipsToBounds = true
+        containerView1.layer.cornerRadius = 12
+        containerView1.homeAnchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 20, height: 200)
+        
+        scrollView.addSubview(containerView2)
+        containerView2.clipsToBounds = true
+        containerView2.layer.cornerRadius = 12
+        containerView2.homeAnchor(top: containerView1.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 20, height: 300)
+        
+        scrollView.addSubview(containerView3)
+        containerView3.clipsToBounds = true
+        containerView3.layer.cornerRadius = 12
+        containerView3.homeAnchor(top: containerView2.bottomAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: nil, paddingTop: 16, paddingLeft: 10, paddingBottom: 16, paddingRight: 0, width: view.frame.width - 20, height: 200)
+        
+        
+        //MARK: =ADDING SUBVIEWS WITHOUT SCROLLVIEWS
+      /*
         
         view.addSubview(containerView1)
          containerView1.centerXAnchor.constraint(equalTo: view.centerXAnchor)
@@ -357,7 +398,7 @@ class firstHomeScreen: UIViewController {
         view.addSubview(containerView3)
         containerView3.centerXAnchor.constraint(equalTo: view.centerXAnchor)
          containerView3.homeAnchor(top: containerView2.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 8, paddingLeft: 8, paddingRight: 8, width: view.frame.width - 10, height: 200)
-        
+        */
     }
     
      //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR
@@ -373,6 +414,14 @@ class firstHomeScreen: UIViewController {
             print(error)
         }
         handleReachability()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("***********viewdidAppear called**************")
+        numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
+        numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
+        numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel3
     }
     
     //MARK: -  REACHABILITY CLASS METHODS

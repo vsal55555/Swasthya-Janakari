@@ -13,6 +13,9 @@ struct newsInfo: Decodable {
     let title: String
     let content: String
     let ext_link: String
-}
+    
+    }
+
+
 
 

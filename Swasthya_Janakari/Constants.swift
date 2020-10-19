@@ -13,3 +13,13 @@ struct Images {
     static let notification = UIImage(named: "notification")!
     static let number = UIImage(named: "number")!
 }
+
+extension UIImage {
+  static func named(_ name: String) -> UIImage {
+    if let image = UIImage(named: name) {
+      return image
+    } else {
+      fatalError("Could not initialize \(UIImage.self) named \(name).")
+    }
+  }
+}
