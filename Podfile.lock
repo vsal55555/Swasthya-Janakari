@@ -1,18 +1,22 @@
 PODS:
-  - SwiftMessages (8.0.2):
-    - SwiftMessages/App (= 8.0.2)
-  - SwiftMessages/App (8.0.2)
+  - iOSDropDown (0.3.4)
+  - SwiftMessages (8.0.3):
+    - SwiftMessages/App (= 8.0.3)
+  - SwiftMessages/App (8.0.3)
 
 DEPENDENCIES:
+  - iOSDropDown
   - SwiftMessages
 
 SPEC REPOS:
   trunk:
+    - iOSDropDown
     - SwiftMessages
 
 SPEC CHECKSUMS:
-  SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
 
-PODFILE CHECKSUM: 26e9edebf0edc85d706ce9a925077e95756f8004
+PODFILE CHECKSUM: 44fb7b7cbbb08925125b2c6225ed47d8edc482a7
 
 COCOAPODS: 1.9.3

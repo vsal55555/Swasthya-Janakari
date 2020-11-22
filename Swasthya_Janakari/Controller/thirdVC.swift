@@ -168,7 +168,7 @@ extension thirdVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedrow = self.news[indexPath.section]
         let urlString = selectedrow.ext_link
-        let url = URL(string: urlString)
+        let url = try URL(string: urlString)
         let safariVC = SFSafariViewController(url: url!)
         safariVC.view.tintColor = .mainPink()
         safariVC.delegate = self
@@ -186,3 +186,5 @@ extension thirdVC: SFSafariViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
 }
+
+ 

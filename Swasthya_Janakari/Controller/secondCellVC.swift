@@ -24,7 +24,7 @@ class secondCellVC: UIViewController {
         
         override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
         // Do any additional setup after loading the view.
             getJSON {
                 self.tableview.reloadData()
@@ -35,6 +35,10 @@ class secondCellVC: UIViewController {
      //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR AND RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
+          let loader =   self.loader()
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        self.stopLoader(loader: loader)
+               }
         getJSON {
                        self.tableview.reloadData()
                    }
@@ -92,10 +96,10 @@ class secondCellVC: UIViewController {
         SwiftMessages.show(config: config, view: view)
     }
     
-    
-        
+ 
         func configureTableView() {
             view.addSubview(tableview)
+            tableview.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
             setTableViewdelegates()
             tableview.rowHeight = 100
             tableview.register(phoneCell.self, forCellReuseIdentifier: "phoneCell")
@@ -151,11 +155,15 @@ class secondCellVC: UIViewController {
             //print("\(news[0].title)")
             
             let cell = tableview.dequeueReusableCell(withIdentifier: Cells.tablecell) as! phoneCell
-            cell.backgroundColor = .blue
-            cell.layer.borderColor = UIColor.black.cgColor
-            cell.layer.borderWidth = 1
-            cell.layer.cornerRadius = 8
-            cell.clipsToBounds = true
+            
+            cell.layer.cornerRadius = 2
+            let shadowPath2 = UIBezierPath(rect: cell.bounds)
+            cell.layer.masksToBounds = false
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(3.0))
+            cell.layer.shadowOpacity = 0.35
+            cell.layer.shadowPath = shadowPath2.cgPath
+            
             
             let phoneinfo = phones[indexPath.section]
             cell.set(phoneinfo: phoneinfo)

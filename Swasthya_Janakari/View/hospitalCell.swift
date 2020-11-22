@@ -22,7 +22,6 @@ class hospitalCell: UITableViewCell {
         addSubview(tableHeadTitleLabel)
         addSubview(tableTailTitleLabel)
         
-        
         configureTitleLabel()
         setTitleLabelConstraints()
         setHeadTitleLabelConstraints()
@@ -43,9 +42,9 @@ class hospitalCell: UITableViewCell {
     
     
     func configureTitleLabel() {
-        tableTitleLabel.backgroundColor = .systemPink
-        tableHeadTitleLabel.backgroundColor = .green
-        tableTailTitleLabel.backgroundColor = .red
+       // tableTitleLabel.backgroundColor = .systemPink
+       // tableHeadTitleLabel.backgroundColor = .green
+        //tableTailTitleLabel.backgroundColor = .red
         tableTitleLabel.numberOfLines = 0
         tableHeadTitleLabel.numberOfLines = 0
         tableTailTitleLabel.numberOfLines = 0

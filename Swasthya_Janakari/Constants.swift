@@ -9,7 +9,7 @@
 import UIKit
 
 struct Images {
-    static let covid = UIImage(named: "covid-19")!
+    static let covid = UIImage(named: "covid")!
     static let notification = UIImage(named: "notification")!
     static let number = UIImage(named: "number")!
 }
@@ -22,4 +22,10 @@ extension UIImage {
       fatalError("Could not initialize \(UIImage.self) named \(name).")
     }
   }
+}
+
+extension Int: Sequence {
+    public func makeIterator() -> CountableRange<Int>.Iterator {
+        return (0..<self).makeIterator()
+    }
 }

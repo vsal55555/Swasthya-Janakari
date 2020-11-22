@@ -16,6 +16,9 @@ class firstHomeScreen: UIViewController {
     //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
     
+    
+    let searchbyDistrictViewModel = SearchbyDistrictViewModel()
+    
     //MARK: =SCROLLVIEW INIT
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     lazy var scrollView: UIScrollView = {
@@ -31,8 +34,8 @@ class firstHomeScreen: UIViewController {
     //MARK: FIRST CONTAINER VIEW
     lazy var containerView1: UIView = {
         let view = UIView()
-        view.backgroundColor = .mainPink()
-        
+        view.backgroundColor = .init(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
+       
         //MARK: -ADD IMAGE1 TO FIRST CONTAINERVIEW
         view .addSubview(cellImage1)
         cellImage1.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -65,7 +68,7 @@ class firstHomeScreen: UIViewController {
         //MARK:  Second container
            lazy var containerView2: UIView = {
                let view = UIView()
-               view.backgroundColor = .mainPink()
+               view.backgroundColor = .init(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
         
             /*
         //MARK: -ADD IMAGE2 TO Second CONTAINERVIEW
@@ -141,8 +144,8 @@ class firstHomeScreen: UIViewController {
     //MARK:  Third container
              lazy var containerView3: UIView = {
                  let view = UIView()
-                 view.backgroundColor = .mainPink()
-          
+                view.backgroundColor = .init(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
+                
           //MARK: -ADD IMAGE2 TO third CONTAINERVIEW
               view .addSubview(cellImage3)
               cellImage3.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -178,7 +181,7 @@ class firstHomeScreen: UIViewController {
         label.textAlignment = .center
         label.text = "covid -19 Statistics"
         label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -187,14 +190,14 @@ class firstHomeScreen: UIViewController {
         label.textAlignment = .center
         label.text = "Nepal 24 hours cases"
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
     let cellImage1: UIImageView = {
            let iv = UIImageView()
            iv.backgroundColor = .red
-           iv.image = #imageLiteral(resourceName: "covid-19")
+           iv.image = #imageLiteral(resourceName: "home-icon2-1")
            iv.contentMode = .scaleAspectFill
            iv.clipsToBounds = true
            return iv
@@ -202,7 +205,7 @@ class firstHomeScreen: UIViewController {
     
     let button1: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor.rgb(red: 89, green: 156, blue: 120)
+        button.backgroundColor = UIColor.mainPink()
         button.layer.cornerRadius = 10
         let font = UIFont.systemFont(ofSize: 16)
         let attributedTitle = NSMutableAttributedString(string:
@@ -210,6 +213,7 @@ class firstHomeScreen: UIViewController {
             UIColor.white, NSAttributedString.Key.font : font ])
         button.addTarget(self, action: #selector(button1SignIn), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
         return button
     }()
     
@@ -220,7 +224,7 @@ class firstHomeScreen: UIViewController {
         label.textAlignment = .center
         label.text = "covid -19 Statistics"
         label.font = UIFont.boldSystemFont(ofSize: 30)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -229,7 +233,7 @@ class firstHomeScreen: UIViewController {
         label.textAlignment = .center
         label.text = "Nepal 24 hours cases"
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -237,7 +241,7 @@ class firstHomeScreen: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -246,7 +250,7 @@ class firstHomeScreen: UIViewController {
         label.textAlignment = .center
         label.text = "New Cases"
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -254,7 +258,7 @@ class firstHomeScreen: UIViewController {
            let label = UILabel()
            label.textAlignment = .center
            label.font = UIFont.boldSystemFont(ofSize: 22)
-           label.textColor = .white
+           label.textColor = .black
            return label
        }()
     
@@ -263,7 +267,7 @@ class firstHomeScreen: UIViewController {
             label.textAlignment = .center
             label.text = "Recovered"
             label.font = UIFont.boldSystemFont(ofSize: 22)
-            label.textColor = .white
+            label.textColor = .black
             return label
         }()
     
@@ -271,7 +275,7 @@ class firstHomeScreen: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -280,14 +284,14 @@ class firstHomeScreen: UIViewController {
         label.textAlignment = .center
         label.text = "Deaths"
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
 
     
     let button2: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = UIColor.rgb(red: 89, green: 156, blue: 120)
+        button.backgroundColor = UIColor.mainPink()
         button.layer.cornerRadius = 10
         let font = UIFont.systemFont(ofSize: 16)
         let attributedTitle = NSMutableAttributedString(string:
@@ -295,6 +299,7 @@ class firstHomeScreen: UIViewController {
             UIColor.white, NSAttributedString.Key.font : font ])
         button.addTarget(self, action: #selector(button2SignIn), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
         return button
     }()
     
@@ -304,7 +309,7 @@ class firstHomeScreen: UIViewController {
           label.textAlignment = .center
           label.text = "covid -19 Statistics"
           label.font = UIFont.boldSystemFont(ofSize: 30)
-          label.textColor = .white
+          label.textColor = .black
           return label
       }()
       
@@ -313,14 +318,14 @@ class firstHomeScreen: UIViewController {
           label.textAlignment = .center
           label.text = "Nepal 24 hours cases"
           label.font = UIFont.boldSystemFont(ofSize: 22)
-          label.textColor = .white
+          label.textColor = .black
           return label
       }()
       
       let cellImage3: UIImageView = {
              let iv = UIImageView()
              iv.backgroundColor = .red
-             iv.image = #imageLiteral(resourceName: "covid-19")
+             iv.image = #imageLiteral(resourceName: "home-icon2")
              iv.contentMode = .scaleAspectFill
              iv.clipsToBounds = true
              return iv
@@ -328,7 +333,7 @@ class firstHomeScreen: UIViewController {
       
       let button3: UIButton = {
           let button = UIButton(type: .system)
-          button.backgroundColor = UIColor.rgb(red: 89, green: 156, blue: 120)
+          button.backgroundColor = UIColor.mainPink()
           button.layer.cornerRadius = 10
           let font = UIFont.systemFont(ofSize: 16)
           let attributedTitle = NSMutableAttributedString(string:
@@ -336,6 +341,7 @@ class firstHomeScreen: UIViewController {
               UIColor.white, NSAttributedString.Key.font : font ])
           button.addTarget(self, action: #selector(button3SignIn), for: .touchUpInside)
           button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
           return button
       }()
     
@@ -347,7 +353,7 @@ class firstHomeScreen: UIViewController {
     
     override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
+        
         print("i'm in first home screen \(appDelegate.myArrayfornumberupperTitleLabel1)")
         print(appDelegate.myArrayfornumberupperTitleLabel2)
         print(appDelegate.myArrayfornumberupperTitleLabel3)
@@ -366,22 +372,26 @@ class firstHomeScreen: UIViewController {
               scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
               scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
               scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
+        scrollView.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
+      
         //MARK: =ADDING SUBVIEWS IN SCROLLVIEWS
         scrollView.addSubview(containerView1)
         containerView1.clipsToBounds = true
         containerView1.layer.cornerRadius = 12
         containerView1.homeAnchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 20, height: 200)
+        containerView1.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
         
         scrollView.addSubview(containerView2)
         containerView2.clipsToBounds = true
         containerView2.layer.cornerRadius = 12
         containerView2.homeAnchor(top: containerView1.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 20, height: 300)
+        containerView2.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
         
         scrollView.addSubview(containerView3)
         containerView3.clipsToBounds = true
         containerView3.layer.cornerRadius = 12
         containerView3.homeAnchor(top: containerView2.bottomAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: nil, paddingTop: 16, paddingLeft: 10, paddingBottom: 16, paddingRight: 0, width: view.frame.width - 20, height: 200)
+        containerView3.addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
         
         
         //MARK: =ADDING SUBVIEWS WITHOUT SCROLLVIEWS
@@ -404,6 +414,7 @@ class firstHomeScreen: UIViewController {
      //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
         do {
             print("i'm in first home screen \(appDelegate.myArrayfornumberupperTitleLabel1)")
             numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
@@ -418,6 +429,18 @@ class firstHomeScreen: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        searchbyDistrictViewModel.createRequesttoSearchDistrictID { checked in
+                      switch checked {
+                      case .success(let stir):
+                          print("I'm in home screen")
+                          print("this is full data\(stir)")
+                          
+                          print("this is required data \(self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker)")
+                          print("this is DistrictID \(self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID)")
+                      case .failure(.nothingFound):
+                          print("status false")
+                      }
+                  }
         print("***********viewdidAppear called**************")
         numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
         numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
@@ -475,7 +498,9 @@ class firstHomeScreen: UIViewController {
          }
          
          @objc func button1SignIn(){
-    
+            
+          
+            
             // create an actionSheet
             let actionSheetController: UIAlertController = UIAlertController(title: "Swasthya Janakari", message: "Please call on following number", preferredStyle: .actionSheet)
 
@@ -534,14 +559,27 @@ class firstHomeScreen: UIViewController {
     
         @objc func button2SignIn(){
             print("clicked me")
-            let layout = UICollectionViewFlowLayout()
+           
+            //let layout = UICollectionViewFlowLayout()
             let first = chartVC()//since this is a collection viewcontroller you need to pass layout also.
             self.navigationController?.pushViewController(first, animated: true)
         }
     
         @objc func button3SignIn(){
         print("clicked me")
-          
+         //   let layout = UICollectionViewFlowLayout()
+          // let first = ButtonViewController(collectionViewLayout: layout)//since this is a collection viewcontroller you need to pass layout also.
+           // self.navigationController?.pushViewController(first, animated: true)
+        
+            let vc = SearchDistrictVC()
+            navigationController?.pushViewController(vc, animated: true)
+            vc.searchDistrictDropDown.optionArray = searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker
+            // ["11", "43", "26", "11", "45", "40"] to [11, 43, 26, 11, 45, 40]
+             vc.searchDistrictDropDown.optionIds = searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID.compactMap { Int($0) }
+            let loader =   self.loader()
+              DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.stopLoader(loader: loader)
+            }  
         }
         
         //MARK: -NAVIGATION CONTROLLER PART
@@ -557,6 +595,9 @@ class firstHomeScreen: UIViewController {
                //collectionView.register(Cell.self, forCellWithReuseIdentifier: reuseIdentifier)
            }
 }
+
+//MARK: EXTENSION TO BUTTON
+
 
 //MARK: VIEW CONSTRAINT FOR HOMEANCHOR
 extension UIView {

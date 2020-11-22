@@ -32,19 +32,47 @@
 		3FE5504124FD8911006180C9 /* secondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5504024FD8911006180C9 /* secondVC.swift */; };
 		3FEC609224FD9E4300678FFA /* thirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC609124FD9E4200678FFA /* thirdVC.swift */; };
 		3FEC609424FD9E9F00678FFA /* fourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEC609324FD9E9F00678FFA /* fourthVC.swift */; };
-		B5A0A3CDD13BE9808D653D1F /* Pods_PokedexMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */; };
+		6EA78F822E2E7512397D6873 /* Pods_Swasthya_Janakari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E20328D7EBD5C5D83E1ABB /* Pods_Swasthya_Janakari.framework */; };
+		FA07C1DC255CEF0600ACDB7E /* SearchDistrictVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C1DB255CEF0600ACDB7E /* SearchDistrictVC.swift */; };
 		FA179A1A253226ED00FBE3C1 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA179A19253226ED00FBE3C1 /* Alerts.swift */; };
 		FA18D5E9252C48DA00AA9DB2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18D5E8252C48DA00AA9DB2 /* Reachability.swift */; };
 		FA18D5EB252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */; };
 		FA22153C251930C9005A1B40 /* FirstHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */; };
 		FA277AD3252F09AE004053B8 /* VerifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277AD2252F09AE004053B8 /* VerifyAPI.swift */; };
+		FA4A8B862568314B0014B55A /* precautionZeroCellVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A8B852568314B0014B55A /* precautionZeroCellVCModel.swift */; };
+		FA4A8B88256831930014B55A /* precautionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A8B87256831930014B55A /* precautionCell.swift */; };
+		FA54E7E9255E959A001EB8B2 /* SearchDistrictTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54E7E8255E959A001EB8B2 /* SearchDistrictTableCell.swift */; };
+		FA54E7EB255E9780001EB8B2 /* SearchDistrictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54E7EA255E9780001EB8B2 /* SearchDistrictModel.swift */; };
 		FA555AD52527419100EF85A6 /* cellChartVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA555AD32527419100EF85A6 /* cellChartVCCollectionViewCell.swift */; };
 		FA555AD62527419100EF85A6 /* cellChartVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */; };
+		FA7CDEE7254B2F1000E0618B /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CDEE6254B2F1000E0618B /* APICaller.swift */; };
 		FA7D3C47252D952500687279 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D3C46252D952500687279 /* DataStructures.swift */; };
 		FA7D3C49252D97B900687279 /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D3C48252D97B900687279 /* RequestHelper.swift */; };
+		FAA415F82566CF4200A0E967 /* symptomZeroCellVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA415F72566CF4200A0E967 /* symptomZeroCellVCModel.swift */; };
+		FAA415FA2566D23D00A0E967 /* symptomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA415F92566D23D00A0E967 /* symptomCell.swift */; };
+		FAAEC11425618E5D0099CEC4 /* ChartVCButtonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEC11325618E5D0099CEC4 /* ChartVCButtonHeader.swift */; };
 		FAEE419E252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */; };
 		FAEE419F252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */; };
+		FAF6BE4C255C373B0057A102 /* Pods_PokedexMVC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FAF6BE5F255C4D300057A102 /* SearchbyDistrictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6BE5E255C4D300057A102 /* SearchbyDistrictViewModel.swift */; };
+		FAF6BE63255C4FD80057A102 /* SearchDistrictError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6BE62255C4FD80057A102 /* SearchDistrictError.swift */; };
+		FAFACD5A2542D6E4008C26CE /* SecondVCwithSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFACD592542D6E4008C26CE /* SecondVCwithSegmentedControl.swift */; };
+		FAFDD8CD25611E5600594D4C /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFDD8CC25611E5600594D4C /* ButtonViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAF6BE4D255C373B0057A102 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FAF6BE4C255C373B0057A102 /* Pods_PokedexMVC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A13426C4AB31EDEA34958FD /* Pods-PokedexMVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokedexMVC.release.xcconfig"; path = "Target Support Files/Pods-PokedexMVC/Pods-PokedexMVC.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,19 +103,39 @@
 		3FE5504024FD8911006180C9 /* secondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondVC.swift; sourceTree = "<group>"; };
 		3FEC609124FD9E4200678FFA /* thirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdVC.swift; sourceTree = "<group>"; };
 		3FEC609324FD9E9F00678FFA /* fourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourthVC.swift; sourceTree = "<group>"; };
+		A2E20328D7EBD5C5D83E1ABB /* Pods_Swasthya_Janakari.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swasthya_Janakari.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BC1020F19112E792A7021E /* Pods-Swasthya_Janakari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swasthya_Janakari.release.xcconfig"; path = "Target Support Files/Pods-Swasthya_Janakari/Pods-Swasthya_Janakari.release.xcconfig"; sourceTree = "<group>"; };
+		BFF66328119B9285F9D8A249 /* Pods-Swasthya_Janakari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swasthya_Janakari.debug.xcconfig"; path = "Target Support Files/Pods-Swasthya_Janakari/Pods-Swasthya_Janakari.debug.xcconfig"; sourceTree = "<group>"; };
 		E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokedexMVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA26787006E35A9E34C635A7 /* Pods-PokedexMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokedexMVC.debug.xcconfig"; path = "Target Support Files/Pods-PokedexMVC/Pods-PokedexMVC.debug.xcconfig"; sourceTree = "<group>"; };
+		FA07C1DB255CEF0600ACDB7E /* SearchDistrictVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDistrictVC.swift; sourceTree = "<group>"; };
 		FA179A19253226ED00FBE3C1 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		FA18D5E8252C48DA00AA9DB2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeScreen.swift; sourceTree = "<group>"; };
 		FA277AD2252F09AE004053B8 /* VerifyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyAPI.swift; sourceTree = "<group>"; };
+		FA4A8B852568314B0014B55A /* precautionZeroCellVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = precautionZeroCellVCModel.swift; sourceTree = "<group>"; };
+		FA4A8B87256831930014B55A /* precautionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = precautionCell.swift; sourceTree = "<group>"; };
+		FA54E7E8255E959A001EB8B2 /* SearchDistrictTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDistrictTableCell.swift; sourceTree = "<group>"; };
+		FA54E7EA255E9780001EB8B2 /* SearchDistrictModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDistrictModel.swift; sourceTree = "<group>"; };
 		FA555AD32527419100EF85A6 /* cellChartVCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellChartVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cellChartVCCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA7CDEE6254B2F1000E0618B /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		FA7D3C46252D952500687279 /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		FA7D3C48252D97B900687279 /* RequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
+		FAA415F72566CF4200A0E967 /* symptomZeroCellVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = symptomZeroCellVCModel.swift; sourceTree = "<group>"; };
+		FAA415F92566D23D00A0E967 /* symptomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = symptomCell.swift; sourceTree = "<group>"; };
+		FAAEC11325618E5D0099CEC4 /* ChartVCButtonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVCButtonHeader.swift; sourceTree = "<group>"; };
 		FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smallCellChartVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = smallCellChartVCCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAF6BE4E255C37B00057A102 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF6BE51255C387C0057A102 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF6BE54255C402C0057A102 /* Swasthya Janakari */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Swasthya Janakari"; sourceTree = "<group>"; };
+		FAF6BE55255C40360057A102 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF6BE5E255C4D300057A102 /* SearchbyDistrictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbyDistrictViewModel.swift; sourceTree = "<group>"; };
+		FAF6BE62255C4FD80057A102 /* SearchDistrictError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDistrictError.swift; sourceTree = "<group>"; };
+		FAFACD592542D6E4008C26CE /* SecondVCwithSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVCwithSegmentedControl.swift; sourceTree = "<group>"; };
+		FAFDD8CC25611E5600594D4C /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5A0A3CDD13BE9808D653D1F /* Pods_PokedexMVC.framework in Frameworks */,
+				6EA78F822E2E7512397D6873 /* Pods_Swasthya_Janakari.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +153,11 @@
 		1F7F14D363BD000632D2B949 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */,
+				FAF6BE55255C40360057A102 /* SwiftMessages.framework */,
+				FAF6BE54255C402C0057A102 /* Swasthya Janakari */,
+				FAF6BE51255C387C0057A102 /* SwiftMessages.framework */,
+				FAF6BE4E255C37B00057A102 /* SwiftMessages.framework */,
+				A2E20328D7EBD5C5D83E1ABB /* Pods_Swasthya_Janakari.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +167,8 @@
 			children = (
 				EA26787006E35A9E34C635A7 /* Pods-PokedexMVC.debug.xcconfig */,
 				0A13426C4AB31EDEA34958FD /* Pods-PokedexMVC.release.xcconfig */,
+				BFF66328119B9285F9D8A249 /* Pods-Swasthya_Janakari.debug.xcconfig */,
+				B7BC1020F19112E792A7021E /* Pods-Swasthya_Janakari.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -126,6 +180,7 @@
 				3FB5DACB24F4FECE005AD650 /* Products */,
 				3FAA0CC2DB35AF23A11ACD1B /* Pods */,
 				1F7F14D363BD000632D2B949 /* Frameworks */,
+				FA157AC7255D9E3D005452B9 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +195,8 @@
 		3FB5DACC24F4FECE005AD650 /* Swasthya_Janakari */ = {
 			isa = PBXGroup;
 			children = (
+				FAF6BE60255C4F330057A102 /* Error Handling */,
+				FAF6BE5D255C4D100057A102 /* ViewModel */,
 				3FB5DAE324F4FF36005AD650 /* Controller */,
 				3FB5DAE224F4FF24005AD650 /* View */,
 				3FB5DAE124F4FF18005AD650 /* Model */,
@@ -163,6 +220,9 @@
 				FA555AD42527419100EF85A6 /* cellChartVCCollectionViewCell.xib */,
 				FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */,
 				FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */,
+				FA54E7EA255E9780001EB8B2 /* SearchDistrictModel.swift */,
+				FAA415F72566CF4200A0E967 /* symptomZeroCellVCModel.swift */,
+				FA4A8B852568314B0014B55A /* precautionZeroCellVCModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,10 +234,15 @@
 				3FB5DAE924F5783F005AD650 /* Cell.swift */,
 				3FD50FAC24FFFE20007FE3DE /* tableCell.swift */,
 				3F98C7E62502B5C800AEB41C /* newsCell.swift */,
+				FAA415F92566D23D00A0E967 /* symptomCell.swift */,
+				FA4A8B87256831930014B55A /* precautionCell.swift */,
 				3FE20B0C2503EFC800EE20BC /* hospitalCell.swift */,
 				3F80FBF92506367800A26808 /* phoneCell.swift */,
 				FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */,
 				FA179A19253226ED00FBE3C1 /* Alerts.swift */,
+				FA7CDEE6254B2F1000E0618B /* APICaller.swift */,
+				FA54E7E8255E959A001EB8B2 /* SearchDistrictTableCell.swift */,
+				FAAEC11325618E5D0099CEC4 /* ChartVCButtonHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				3FE5504024FD8911006180C9 /* secondVC.swift */,
+				FAFACD592542D6E4008C26CE /* SecondVCwithSegmentedControl.swift */,
 				3FEC609124FD9E4200678FFA /* thirdVC.swift */,
 				3FEC609324FD9E9F00678FFA /* fourthVC.swift */,
 				3FE2E6CC250698B700AD2852 /* zeroCellVC.swift */,
@@ -193,6 +259,8 @@
 				3F3257562504255D00499D69 /* secondCellVC.swift */,
 				3F98DAAC25071D8D00D36C7E /* chartVC.swift */,
 				FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */,
+				FA07C1DB255CEF0600ACDB7E /* SearchDistrictVC.swift */,
+				FAFDD8CC25611E5600594D4C /* ButtonViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +289,38 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		FA157AC7255D9E3D005452B9 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		FAF6BE5D255C4D100057A102 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6BE5E255C4D300057A102 /* SearchbyDistrictViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAF6BE60255C4F330057A102 /* Error Handling */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6BE61255C4F5F0057A102 /* ParsingErrorHandlerOnDuty */,
+			);
+			path = "Error Handling";
+			sourceTree = "<group>";
+		};
+		FAF6BE61255C4F5F0057A102 /* ParsingErrorHandlerOnDuty */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6BE62255C4FD80057A102 /* SearchDistrictError.swift */,
+			);
+			path = ParsingErrorHandlerOnDuty;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +333,7 @@
 				3FB5DAC724F4FECE005AD650 /* Frameworks */,
 				3FB5DAC824F4FECE005AD650 /* Resources */,
 				9A37D2BE148D414AE31E2F6A /* [CP] Embed Pods Frameworks */,
+				FAF6BE4D255C373B0057A102 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,7 +408,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PokedexMVC-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Swasthya_Janakari-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -320,15 +421,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokedexMVC/Pods-PokedexMVC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Swasthya_Janakari/Pods-Swasthya_Janakari-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokedexMVC/Pods-PokedexMVC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Swasthya_Janakari/Pods-Swasthya_Janakari-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokedexMVC/Pods-PokedexMVC-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swasthya_Janakari/Pods-Swasthya_Janakari-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -348,6 +449,7 @@
 				3FE2E6CD250698B700AD2852 /* zeroCellVC.swift in Sources */,
 				FA555AD52527419100EF85A6 /* cellChartVCCollectionViewCell.swift in Sources */,
 				3F98C7E72502B5C800AEB41C /* newsCell.swift in Sources */,
+				FA54E7E9255E959A001EB8B2 /* SearchDistrictTableCell.swift in Sources */,
 				FA277AD3252F09AE004053B8 /* VerifyAPI.swift in Sources */,
 				FA179A1A253226ED00FBE3C1 /* Alerts.swift in Sources */,
 				3F98DAAD25071D8D00D36C7E /* chartVC.swift in Sources */,
@@ -357,17 +459,29 @@
 				FA7D3C49252D97B900687279 /* RequestHelper.swift in Sources */,
 				3FB5DAE524F50045005AD650 /* firstVC.swift in Sources */,
 				FA7D3C47252D952500687279 /* DataStructures.swift in Sources */,
+				FA54E7EB255E9780001EB8B2 /* SearchDistrictModel.swift in Sources */,
+				FAA415FA2566D23D00A0E967 /* symptomCell.swift in Sources */,
+				FA7CDEE7254B2F1000E0618B /* APICaller.swift in Sources */,
 				3FD50FAA24FEC872007FE3DE /* UIView+Ext.swift in Sources */,
+				FAA415F82566CF4200A0E967 /* symptomZeroCellVCModel.swift in Sources */,
+				FAF6BE63255C4FD80057A102 /* SearchDistrictError.swift in Sources */,
 				3FB5DAD024F4FECF005AD650 /* SceneDelegate.swift in Sources */,
 				3F80FBFA2506367800A26808 /* phoneCell.swift in Sources */,
 				3FB5DAE824F50535005AD650 /* Extensions.swift in Sources */,
+				FAFACD5A2542D6E4008C26CE /* SecondVCwithSegmentedControl.swift in Sources */,
+				FAAEC11425618E5D0099CEC4 /* ChartVCButtonHeader.swift in Sources */,
 				FA18D5EB252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift in Sources */,
 				FA22153C251930C9005A1B40 /* FirstHomeScreen.swift in Sources */,
+				FA4A8B88256831930014B55A /* precautionCell.swift in Sources */,
 				3FE2E6CF2506991000AD2852 /* firstCellVC.swift in Sources */,
 				3FE20B0B2503EB2200EE20BC /* hospitalInfo.swift in Sources */,
+				FAF6BE5F255C4D300057A102 /* SearchbyDistrictViewModel.swift in Sources */,
 				3FD50FAD24FFFE20007FE3DE /* tableCell.swift in Sources */,
 				3FB5DAEA24F5783F005AD650 /* Cell.swift in Sources */,
+				FA07C1DC255CEF0600ACDB7E /* SearchDistrictVC.swift in Sources */,
 				FA18D5E9252C48DA00AA9DB2 /* Reachability.swift in Sources */,
+				FAFDD8CD25611E5600594D4C /* ButtonViewController.swift in Sources */,
+				FA4A8B862568314B0014B55A /* precautionZeroCellVCModel.swift in Sources */,
 				3F98C7E52502A9A000AEB41C /* newsInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -498,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -510,9 +624,10 @@
 		};
 		3FB5DADF24F4FEDC005AD650 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA26787006E35A9E34C635A7 /* Pods-PokedexMVC.debug.xcconfig */;
+			baseConfigurationReference = BFF66328119B9285F9D8A249 /* Pods-Swasthya_Janakari.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KU2VG7M96;
 				INFOPLIST_FILE = Swasthya_Janakari/Info.plist;
@@ -520,8 +635,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shree.vsal55555.Swasthya_Janakari;
+				PRODUCT_BUNDLE_IDENTIFIER = shree.vsal55555.SwasthyaJanakari;
 				PRODUCT_NAME = Swasthya_Janakari;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -529,9 +645,10 @@
 		};
 		3FB5DAE024F4FEDC005AD650 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A13426C4AB31EDEA34958FD /* Pods-PokedexMVC.release.xcconfig */;
+			baseConfigurationReference = B7BC1020F19112E792A7021E /* Pods-Swasthya_Janakari.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KU2VG7M96;
 				INFOPLIST_FILE = Swasthya_Janakari/Info.plist;
@@ -539,8 +656,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = shree.vsal55555.Swasthya_Janakari;
+				PRODUCT_BUNDLE_IDENTIFIER = shree.vsal55555.SwasthyaJanakari;
 				PRODUCT_NAME = Swasthya_Janakari;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

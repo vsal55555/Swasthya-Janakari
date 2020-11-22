@@ -16,12 +16,16 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         let label = UILabel()
         label.text = "खमवदवमलवलवख"
        // label.textAlignment = .center
-        label.textColor = .white
+        label.textColor = .init(red: 0.00, green: 0.24, blue: 0.12, alpha: 1.00)
         return label
     }()
     
+  
+
+    
+    
     public func configure() {
-        backgroundColor = .systemGreen
+        backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
         addSubview(label)
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +37,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         super.layoutSubviews()
         //label.frame = bounds //entire screen
     }
+    
  
     
 }
@@ -45,7 +50,7 @@ class FooterCollectionReusableView: UICollectionReusableView {
         let label = UILabel()
         label.text = "खमपिजषउमाजषउाफ"
         label.textAlignment = .center
-        label.textColor = .white
+        label.textColor = .init(red: 0.00, green: 0.24, blue: 0.12, alpha: 1.00)
         return label
     }()
     

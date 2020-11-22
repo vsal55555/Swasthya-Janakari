@@ -18,9 +18,10 @@ class phoneCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        
+        
         addSubview(tableTitleLabel)
         addSubview(tableHeadTitleLabel)
-        
         
         
         configureTitleLabel()
@@ -28,6 +29,8 @@ class phoneCell: UITableViewCell {
         setHeadTitleLabelConstraints()
         
     }
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -42,8 +45,8 @@ class phoneCell: UITableViewCell {
     
     
     func configureTitleLabel() {
-        tableTitleLabel.backgroundColor = .systemPink
-        tableHeadTitleLabel.backgroundColor = .green
+        tableTitleLabel.textColor = .init(red: 0.00, green: 0.24, blue: 0.12, alpha: 1.00)
+        tableHeadTitleLabel.textColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
        
         tableTitleLabel.numberOfLines = 0
         tableHeadTitleLabel.numberOfLines = 0

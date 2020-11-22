@@ -1,0 +1,6 @@
+framework module Pods_Swasthya_Janakari {
+  umbrella header "Pods-Swasthya_Janakari-umbrella.h"
+
+  export *
+  module * { export * }
+}

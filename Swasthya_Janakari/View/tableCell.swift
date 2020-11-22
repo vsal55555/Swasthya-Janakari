@@ -20,6 +20,8 @@ class tableCell: UITableViewCell {
         addSubview(tableHeadTitleLabel)
         addSubview(tableTailTitleLabel)
         
+        
+        
         configureImageView()
         configureTitleLabel()
         setImageConstraints()
@@ -33,18 +35,23 @@ class tableCell: UITableViewCell {
     
     func set(cellinfo: cellInfo) {
         tableImageView.image = cellinfo.image
+        tableImageView.contentMode = .scaleAspectFill
         tableHeadTitleLabel.text = cellinfo.title
         tableTailTitleLabel.text = cellinfo.topic
     }
     
     func configureImageView() {
-        tableImageView.layer.cornerRadius = 10
+        tableImageView.backgroundColor = .init(red: 0.81, green: 0.76, blue: 1.00, alpha: 0.50)
+        
+        tableImageView.layer.cornerRadius = 40
+        tableImageView.layer.borderWidth = 2
+        tableImageView.layer.borderColor = .init(srgbRed: 0, green: 0, blue: 0, alpha: 1)
         tableImageView.clipsToBounds = true
     }
     
     func configureTitleLabel() {
-        tableHeadTitleLabel.backgroundColor = .green
-        tableTailTitleLabel.backgroundColor = .systemPink
+        tableHeadTitleLabel.textColor = .black
+        tableTailTitleLabel.textColor = .gray
         tableHeadTitleLabel.numberOfLines = 0
         tableTailTitleLabel.numberOfLines = 0
     }
@@ -54,19 +61,19 @@ class tableCell: UITableViewCell {
         tableImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         tableImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
         tableImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        tableImageView.widthAnchor.constraint(equalTo: tableImageView.heightAnchor, multiplier: 16/9).isActive = true
+        tableImageView.widthAnchor.constraint(equalTo: tableImageView.heightAnchor).isActive = true
     }
     
     func setHeadTitleLabelConstraints() {
           tableHeadTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        tableHeadTitleLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableHeadTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         tableHeadTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 20).isActive = true
               tableHeadTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         tableHeadTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
     }
     func setTailTitleLabelConstraint() {
         tableTailTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        tableTailTitleLabel.topAnchor.constraint(equalTo: tableHeadTitleLabel.bottomAnchor, constant: 20).isActive = true
+        tableTailTitleLabel.topAnchor.constraint(equalTo: tableHeadTitleLabel.bottomAnchor, constant: 12).isActive = true
         tableTailTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 20).isActive = true
         tableTailTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         tableTailTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true

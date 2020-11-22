@@ -4,7 +4,7 @@
 //
 //  Created by macbook on 10/6/20.
 //  Copyright © 2020 BSAL-MAC. All rights reserved.
-//
+
 
 import UIKit
 
@@ -18,9 +18,9 @@ class smallCellChartVCCollectionViewCell: UICollectionViewCell {
     
     let LowerLabel : UILabel = {
         let lb = UILabel()
-        lb.textColor = UIColor.lightGray
+        lb.textColor = UIColor.black
         lb.font = UIFont.systemFont(ofSize: 22)
-        lb.font = UIFont.boldSystemFont(ofSize: 22)
+     //   lb.font = UIFont.boldSystemFont(ofSize: 22)
      
         return lb
     }()
@@ -29,15 +29,17 @@ class smallCellChartVCCollectionViewCell: UICollectionViewCell {
            let lb = UILabel()
            lb.textColor = UIColor.lightGray
            lb.font = UIFont.systemFont(ofSize: 22)
-           lb.font = UIFont.boldSystemFont(ofSize: 22)
+          // lb.font = UIFont.boldSystemFont(ofSize: 22)
            return lb
        }()
+    
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // Initialization code
-        backgroundColor = .green
+        backgroundColor = .init(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
         addSubview(UpperLabel)
         addSubview(LowerLabel)
        

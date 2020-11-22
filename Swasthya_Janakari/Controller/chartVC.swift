@@ -25,6 +25,8 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     //var collectionArr: [String] = ["1", "2", "3", "4", "5"]
     let cellTitle = [("Bishal"), ("Puja"), ("Hari")]
     let cellImage = [UIImage(named: "dice_1"), UIImage(named: "dice_2"), UIImage(named: "dice_3")]
+    let myUpperLabelcolorforsmallCell = [UIColor.orange, UIColor.green, UIColor.red]
+    let myUpperLabelcolorforCell =  [.init(red: 1.00, green: 0.83, blue: 0.16, alpha: 1.00), UIColor.orange, UIColor.green, UIColor.red]
     
     var upperTitle: [upperTitleCell] = []
     var myArrayforUpperTitle = [String]()
@@ -80,10 +82,9 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         //FooterCollectionReusableView
         collectionView?.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterCollectionReusableView.identifier)
-        
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
         view.addSubview(collectionView!)
       //  configureViewComponents()
        
@@ -193,26 +194,45 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: smallCellChartVCCollectionViewCell.identifier, for: indexPath) as! smallCellChartVCCollectionViewCell
             cell.LowerLabel.text = lowerTitle[indexPath.row]
             cell.UpperLabel.text = myArrayforUpperTitle[indexPath.row]
-            
+            cell.UpperLabel.textColor = myUpperLabelcolorforsmallCell[indexPath.row]
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+            cell.layer.shadowRadius = 2.0
+            cell.layer.shadowOpacity = 0.35
             cell.clipsToBounds = true
             cell.layer.cornerRadius = 15
+            cell.layer.masksToBounds = false
+//cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+
+            //addShadow(offset: CGSize.init(width: 0, height: 3), color: UIColor.black, radius: 2.0, opacity: 0.35)
             return cell
-            
         }
+        
         if indexPath.section == 1 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) as! cellChartVCCollectionViewCell
             cell.LowerLabel.text = upperTitleSquare[indexPath.row]
             cell.UpperLabel.text = myArrayforUpperSquareTitle[indexPath.row]
-            
-        cell.clipsToBounds = true
-        cell.layer.cornerRadius = 15
+            cell.UpperLabel.textColor = myUpperLabelcolorforCell[indexPath.row]
+            cell.layer.shadowColor = UIColor.black.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+            cell.layer.shadowRadius = 2.0
+            cell.layer.shadowOpacity = 0.35
+            cell.clipsToBounds = true
+            cell.layer.cornerRadius = 15
+            cell.layer.masksToBounds = false
         return cell
      }
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellChartVCCollectionViewCell.identifier, for: indexPath) as! cellChartVCCollectionViewCell
         cell.LowerLabel.text = lowerTitleSquare[indexPath.row]
         cell.UpperLabel.text = myArrayforlowerSquareTitle[indexPath.row]
+        cell.UpperLabel.textColor = myUpperLabelcolorforCell[indexPath.row]
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 0.35
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 15
+        cell.layer.masksToBounds = false
         return cell
         
     }
@@ -271,35 +291,3 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
 
 
-
-    //Mark: - Selectors
-   // @objc func showSearchBar() {
-     //   print(123)}
-    /*
-    //Mark: - Helper Functions
-    func configureViewComponents() {
-        //collectionView.backgroundColor = .white
-       
-        
-       // navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchBar))
-        //navigationItem.rightBarButtonItem?.tintColor = .white
-      //  collectionView.register(Cell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    }
-}
-*/
-/*
-extension chartVC: UICollectionViewDelegateFlowLayout {
-    
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 32, left: 8, bottom: 32, right: 8)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width = (view.frame.width - 36)
-        return CGSize(width: width, height: width/2 )
-    }
-}
-*/

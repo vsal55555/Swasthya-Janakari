@@ -15,7 +15,7 @@ class fourthVC: UIViewController {
     let reachability = Reachability()
     var tableview = UITableView()
     var cellInfos: [cellInfo] = []
-    let cellSpacingHeight: CGFloat = 10
+    let cellSpacingHeight: CGFloat = 20
     
     let zerotableVC = zeroCellVC()
     let firsttableVC = firstCellVC()
@@ -27,7 +27,7 @@ class fourthVC: UIViewController {
 
     override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .systemPink
+    view.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
     cellInfos = fetchData()
     configureTableView()
         
@@ -92,8 +92,9 @@ class fourthVC: UIViewController {
     
     func configureTableView(){
         view.addSubview(tableview)
+        tableview.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
         setTableViewdelegates()
-        tableview.rowHeight = 100 
+        tableview.rowHeight = 100
         tableview.register(tableCell.self, forCellReuseIdentifier: "tableCell")
         tableview.pin(to: view)
     }
@@ -158,11 +159,16 @@ extension fourthVC: UITableViewDelegate, UITableViewDataSource {
     //
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: Cells.tablecell) as! tableCell
-        cell.backgroundColor = .blue
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
+        
+        
+        cell.layer.cornerRadius = 10
+        let shadowPath2 = UIBezierPath(rect: cell.bounds)
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(3.0))
+        cell.layer.shadowOpacity = 0.8
+        cell.layer.shadowPath = shadowPath2.cgPath
+        
         let cellinfo = cellInfos[indexPath.section]
         cell.set(cellinfo: cellinfo)
         return cell
@@ -181,3 +187,4 @@ extension fourthVC {
     }
     
 }
+

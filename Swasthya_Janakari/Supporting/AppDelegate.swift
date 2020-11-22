@@ -28,8 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var myArrayfornumberupperTitleLabel2: String = ""
     var myArrayfornumberupperTitleLabel3: String = ""
     
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        var navigationBarAppearace = UINavigationBar.appearance()
+//        //UINavigationBar.layer.masksToBounds = false
+//        //navigationBar.layer.masksToBounds = false
+//       // navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
+//        navigationController?.navigationBar.layer.shadowOpacity = 0.8
+//        navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+//        navigationController?.navigationBar.layer.shadowRadius = 2
+        //navigationBarAppearace.tintColor = UIColor.mainPink()
+        navigationBarAppearace.barTintColor = .init(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
+        navigationBarAppearace.addShadow(offset: CGSize.init(width: 0, height: 10), color: UIColor.red, radius: 10.0, opacity: 0.35)
         print("i'm in delegate difFinish Launching Options")
                
          /*
