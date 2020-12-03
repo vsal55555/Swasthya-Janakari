@@ -26,7 +26,7 @@ class zeroCellVC: UIViewController {
                static let precautionCell = "precautionCell"
            }
            //MARK: -UISEGMENTED CONTROL
-       let items = ["Symptoms", "Precautions", "Remedies"]
+       let items = ["लक्षणहरु", "रोकथामका उपाय", "उपचार"]  
           lazy var segmentedControl: UISegmentedControl = {
               let control = UISegmentedControl(items: items)
               control.selectedSegmentIndex = 0

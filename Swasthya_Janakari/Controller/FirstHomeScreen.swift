@@ -47,17 +47,17 @@ class firstHomeScreen: UIViewController {
         //MARK: -ADD UPPERHEADER1 TO FIRST CONTAINERVIEW
         view.addSubview(upperTitleLabel)
       //  upperTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        upperTitleLabel.homeAnchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 12, paddingRight: 32)
+        upperTitleLabel.homeAnchor(top: view.topAnchor, left: cellImage1.rightAnchor, paddingTop: 12, paddingLeft: 18)
         
         //MARK: -ADD LOWERHEADER1 TO FIRST CONTAINERVIEW
         view.addSubview(lowerTitleLabel)
        // lowerTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        lowerTitleLabel.homeAnchor(top: upperTitleLabel.bottomAnchor, right: view.rightAnchor, paddingTop: 12,  paddingRight: 32)
+        lowerTitleLabel.homeAnchor(top: upperTitleLabel.bottomAnchor,left: cellImage1.rightAnchor, right: view.rightAnchor, paddingTop: 12, paddingLeft: 18, paddingRight: 32)
 
     
         //MARK: -ADD BUTTON1 TO FIRST CONTAINERVIEW
              view.addSubview(button1)
-             button1.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 12, paddingRight: 32, width: 120)
+             button1.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 64, width: 150, height: 42)
         
          return view
     }()
@@ -87,7 +87,7 @@ class firstHomeScreen: UIViewController {
               //MARK: -ADD secondLOWERHEADER TO second CONTAINERVIEW
               view.addSubview(secondlowerTitleLabel)
              // lowerTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-              secondlowerTitleLabel.homeAnchor(top: secondupperTitleLabel.bottomAnchor, right: view.rightAnchor, paddingTop: 12,  paddingRight: 32)
+            secondlowerTitleLabel.homeAnchor(top: secondupperTitleLabel.bottomAnchor, left: view.leftAnchor, paddingTop: 12, paddingLeft: 32)
             
             
             //MARK: -ADD NUMBERUPPERLABEL1 TO Second CONTAINERVIEW
@@ -113,8 +113,8 @@ class firstHomeScreen: UIViewController {
             
             //MARK: -ADD NUMBERUPPERLABEL2 TO Second CONTAINERVIEW
             view .addSubview(numberlowerTitleLabel2)
-            numberlowerTitleLabel2.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            numberlowerTitleLabel2.homeAnchor(top: numberupperTitleLabel2.bottomAnchor, left: numberlowerTitleLabel1.leftAnchor, paddingTop: 12, paddingLeft: 16)
+            //numberlowerTitleLabel2.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            numberlowerTitleLabel2.homeAnchor(top: numberupperTitleLabel2.bottomAnchor, left: numberlowerTitleLabel1.rightAnchor, paddingTop: 12, paddingLeft: 48)
         
             
             //MARK: -ADD NUMBERUPPERLABEL3 TO Second CONTAINERVIEW
@@ -136,7 +136,7 @@ class firstHomeScreen: UIViewController {
             
             //MARK: -ADD BUTTON2 TO second CONTAINERVIEW
                  view.addSubview(button2)
-                 button2.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 12, paddingRight: 32, width: 120)
+                 button2.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 64, width: 150, height: 42)
         
      return view
       }()
@@ -157,17 +157,16 @@ class firstHomeScreen: UIViewController {
               //MARK: -ADD thirdUPPERHEADER1 TO third CONTAINERVIEW
               view.addSubview(thirdupperTitleLabel)
             //  upperTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-              thirdupperTitleLabel.homeAnchor(top: view.topAnchor, right: view.rightAnchor, paddingTop: 12, paddingRight: 32)
-              
+              thirdupperTitleLabel.homeAnchor(top: view.topAnchor, left: cellImage3.rightAnchor, paddingTop: 12, paddingLeft: 18)
               //MARK: -ADD thirdLOWERHEADER1 TO third CONTAINERVIEW
               view.addSubview(thirdlowerTitleLabel)
              // lowerTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-              thirdlowerTitleLabel.homeAnchor(top: thirdupperTitleLabel.bottomAnchor, right: view.rightAnchor, paddingTop: 12,  paddingRight: 32)
+              thirdlowerTitleLabel.homeAnchor(top: thirdupperTitleLabel.bottomAnchor, left: cellImage3.rightAnchor, right: view.rightAnchor, paddingTop: 12, paddingLeft: 18, paddingRight: 32)
 
           
               //MARK: -ADD BUTTON3 TO second CONTAINERVIEW
                    view.addSubview(button3)
-                   button3.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 12, paddingRight: 32, width: 120)
+                   button3.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 64, width: 150, height: 42)
           
        return view
         }()
@@ -179,7 +178,7 @@ class firstHomeScreen: UIViewController {
     let upperTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "covid -19 Statistics"
+        label.text = "आकस्मिक सम्पर्क"
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = .black
         return label
@@ -187,9 +186,11 @@ class firstHomeScreen: UIViewController {
     
     let lowerTitleLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.text = "Nepal 24 hours cases"
-        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        label.sizeToFit()
+        label.text = "यदी तपाईंलाई कोरोना सम्बन्धी शंका लागेमा तुरुन्त डायल गर्नुहोस्"
+        label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = .black
         return label
     }()
@@ -209,7 +210,7 @@ class firstHomeScreen: UIViewController {
         button.layer.cornerRadius = 10
         let font = UIFont.systemFont(ofSize: 16)
         let attributedTitle = NSMutableAttributedString(string:
-        "Dail Number ", attributes: [NSAttributedString.Key.foregroundColor:
+        "डायल गर्नुहोस्", attributes: [NSAttributedString.Key.foregroundColor:
             UIColor.white, NSAttributedString.Key.font : font ])
         button.addTarget(self, action: #selector(button1SignIn), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
@@ -222,7 +223,7 @@ class firstHomeScreen: UIViewController {
     let secondupperTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "covid -19 Statistics"
+        label.text = "कोभिड-१९ तथ्याङ्‌क"
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = .black
         return label
@@ -231,7 +232,7 @@ class firstHomeScreen: UIViewController {
     let secondlowerTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "Nepal 24 hours cases"
+        label.text = "नेपालको पछिल्लो २४ घन्टाको तथ्याङ्क"
         label.font = UIFont.boldSystemFont(ofSize: 22)
         label.textColor = .black
         return label
@@ -248,8 +249,8 @@ class firstHomeScreen: UIViewController {
     let numberlowerTitleLabel1: UILabel = {                         //front lower label 1
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "New Cases"
-        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.text = "नयाँ सङ्‌कमित"
+        label.font = UIFont.systemFont(ofSize: 22)
         label.textColor = .black
         return label
     }()
@@ -265,8 +266,8 @@ class firstHomeScreen: UIViewController {
     let numberlowerTitleLabel2: UILabel = {                            //front lower label 2
             let label = UILabel()
             label.textAlignment = .center
-            label.text = "Recovered"
-            label.font = UIFont.boldSystemFont(ofSize: 22)
+            label.text = "निको भएको"
+            label.font = UIFont.systemFont(ofSize: 22)
             label.textColor = .black
             return label
         }()
@@ -282,8 +283,8 @@ class firstHomeScreen: UIViewController {
     let numberlowerTitleLabel3: UILabel = {                            //front lower label 3
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "Deaths"
-        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.text = "मृत्यु"
+        label.font = UIFont.systemFont(ofSize: 22)
         label.textColor = .black
         return label
     }()
@@ -295,7 +296,7 @@ class firstHomeScreen: UIViewController {
         button.layer.cornerRadius = 10
         let font = UIFont.systemFont(ofSize: 16)
         let attributedTitle = NSMutableAttributedString(string:
-        "Dail Number ", attributes: [NSAttributedString.Key.foregroundColor:
+        "पुरा तथ्याङ्क", attributes: [NSAttributedString.Key.foregroundColor:
             UIColor.white, NSAttributedString.Key.font : font ])
         button.addTarget(self, action: #selector(button2SignIn), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
@@ -307,7 +308,7 @@ class firstHomeScreen: UIViewController {
       let thirdupperTitleLabel: UILabel = {
           let label = UILabel()
           label.textAlignment = .center
-          label.text = "covid -19 Statistics"
+          label.text = "डाक्टरसँग परामर्श"
           label.font = UIFont.boldSystemFont(ofSize: 30)
           label.textColor = .black
           return label
@@ -315,9 +316,11 @@ class firstHomeScreen: UIViewController {
       
       let thirdlowerTitleLabel: UILabel = {
           let label = UILabel()
-          label.textAlignment = .center
-          label.text = "Nepal 24 hours cases"
-          label.font = UIFont.boldSystemFont(ofSize: 22)
+          label.textAlignment = .left
+          label.numberOfLines = 2
+          label.sizeToFit()
+          label.text = "डाक्टरहरुसँग परामर्श लिन चाहानुहुन्छ भने सम्पर्क गर्नुहोस"
+          label.font = UIFont.systemFont(ofSize: 17)
           label.textColor = .black
           return label
       }()
@@ -337,7 +340,7 @@ class firstHomeScreen: UIViewController {
           button.layer.cornerRadius = 10
           let font = UIFont.systemFont(ofSize: 16)
           let attributedTitle = NSMutableAttributedString(string:
-          "Dail Number ", attributes: [NSAttributedString.Key.foregroundColor:
+          "सम्पर्क गर्नुहोस", attributes: [NSAttributedString.Key.foregroundColor:
               UIColor.white, NSAttributedString.Key.font : font ])
           button.addTarget(self, action: #selector(button3SignIn), for: .touchUpInside)
           button.setAttributedTitle(attributedTitle, for: .normal)
@@ -429,18 +432,7 @@ class firstHomeScreen: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        searchbyDistrictViewModel.createRequesttoSearchDistrictID { checked in
-                      switch checked {
-                      case .success(let stir):
-                          print("I'm in home screen")
-                          print("this is full data\(stir)")
-                          
-                          print("this is required data \(self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker)")
-                          print("this is DistrictID \(self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID)")
-                      case .failure(.nothingFound):
-                          print("status false")
-                      }
-                  }
+       
         print("***********viewdidAppear called**************")
         numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
         numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
@@ -559,27 +551,17 @@ class firstHomeScreen: UIViewController {
     
         @objc func button2SignIn(){
             print("clicked me")
-           
             //let layout = UICollectionViewFlowLayout()
             let first = chartVC()//since this is a collection viewcontroller you need to pass layout also.
+            //let first = DoctorVC()
             self.navigationController?.pushViewController(first, animated: true)
         }
     
         @objc func button3SignIn(){
         print("clicked me")
-         //   let layout = UICollectionViewFlowLayout()
-          // let first = ButtonViewController(collectionViewLayout: layout)//since this is a collection viewcontroller you need to pass layout also.
-           // self.navigationController?.pushViewController(first, animated: true)
-        
-            let vc = SearchDistrictVC()
-            navigationController?.pushViewController(vc, animated: true)
-            vc.searchDistrictDropDown.optionArray = searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker
-            // ["11", "43", "26", "11", "45", "40"] to [11, 43, 26, 11, 45, 40]
-             vc.searchDistrictDropDown.optionIds = searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID.compactMap { Int($0) }
-            let loader =   self.loader()
-              DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.stopLoader(loader: loader)
-            }  
+         let vc = DoctorVC()
+         self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         
         //MARK: -NAVIGATION CONTROLLER PART

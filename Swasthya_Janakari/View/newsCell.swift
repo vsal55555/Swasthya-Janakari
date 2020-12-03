@@ -8,25 +8,48 @@
 
 import UIKit
 
+
 class newsCell: UITableViewCell {
     
     var tableImageView = UIImageView()
-    var tableHeadTitleLabel = UILabel()
-    var tableTailTitleLabel = UILabel()
+    
+    var tableHeadTitleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 2
+        label.sizeToFit()
+        //label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        return label
+    }()
+    
+    var tableTailTitleLabel: UILabel = {
+           let label = UILabel()
+           label.numberOfLines = 1
+           label.sizeToFit()
+           //label.adjustsFontSizeToFitWidth = true
+           label.font = UIFont.systemFont(ofSize: 17)
+           return label
+       }()
+    
+    var sourceTitleLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         addSubview(tableImageView)
         addSubview(tableHeadTitleLabel)
         addSubview(tableTailTitleLabel)
+        addSubview(sourceTitleLabel)
         
         configureImageView()
         configureTitleLabel()
         setImageConstraints()
         setHeadTitleLabelConstraints()
         setTailTitleLabelConstraint()
+        setSourceTitleLabelConstraint()
     }
     
+   
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,11 +57,16 @@ class newsCell: UITableViewCell {
     func set(newsinfo: newsInfo) {
         
         let urlString = newsinfo.image
-        let url = URL(string: urlString)
-      
-        tableImageView.downloaded(from: url!)
+        
+        if urlString == nil {
+            tableImageView.image  = UIImage(named: "covid")
+        } else {
+            let url = URL(string: urlString!)
+            tableImageView.downloaded(from: url!)
+        }
         tableHeadTitleLabel.text = newsinfo.title
-        tableTailTitleLabel.text = newsinfo.content
+        tableTailTitleLabel.text = String(newsinfo.content.filter { !"<h4><p></p><h1 itemprop=\"headline\"></h4>&nbsp;&nbsp;".contains($0) })
+        sourceTitleLabel.text = newsinfo.source
     }
     
     func configureImageView() {
@@ -47,33 +75,39 @@ class newsCell: UITableViewCell {
     }
     
     func configureTitleLabel() {
-        tableHeadTitleLabel.backgroundColor = .green
-        tableTailTitleLabel.backgroundColor = .systemPink
-        tableHeadTitleLabel.numberOfLines = 0
-        tableTailTitleLabel.numberOfLines = 0
+        sourceTitleLabel.textColor = UIColor.gray
+       
     }
     
     func setImageConstraints() {
         tableImageView.translatesAutoresizingMaskIntoConstraints = false
         tableImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        tableImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-        tableImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        tableImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -8).isActive = true
+        tableImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         tableImageView.widthAnchor.constraint(equalTo: tableImageView.heightAnchor, multiplier: 16/9).isActive = true
     }
     
     func setHeadTitleLabelConstraints() {
           tableHeadTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tableHeadTitleLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        tableHeadTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 20).isActive = true
-              tableHeadTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        tableHeadTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 08).isActive = true
+          //    tableHeadTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         tableHeadTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
     }
     func setTailTitleLabelConstraint() {
         tableTailTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        tableTailTitleLabel.topAnchor.constraint(equalTo: tableHeadTitleLabel.bottomAnchor, constant: 20).isActive = true
-        tableTailTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 20).isActive = true
-        tableTailTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        tableTailTitleLabel.topAnchor.constraint(equalTo: tableHeadTitleLabel.bottomAnchor, constant: 16).isActive = true
+        tableTailTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 08).isActive = true
+      //  tableTailTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         tableTailTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+    }
+    
+    func setSourceTitleLabelConstraint() {
+        sourceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        sourceTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+        sourceTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 08).isActive = true
+        sourceTitleLabel.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        sourceTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
     }
 }
 

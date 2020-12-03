@@ -24,7 +24,7 @@ class secondVC: UIViewController {
             static let tablecell = "hospitalCell"
         }
         //MARK: -UISEGMENTED CONTROL
-    let items = ["PCR", "Quarantine", "General"]
+    let items = ["पिसिआर केन्द्र", "क्वारेन्टाईन केन्द्र", "जेनेरल अस्पताल"]
        lazy var segmentedControl: UISegmentedControl = {
            let control = UISegmentedControl(items: items)
            control.selectedSegmentIndex = 0

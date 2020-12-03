@@ -32,30 +32,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //let layout = UICollectionViewFlowLayout()
         //let first = firstVC(collectionViewLayout: layout)
         let first = firstHomeScreen()
-        first.title = "COVID-19"
-        first.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), tag: 0)
+        first.title = "होम"
+        first.tabBarItem = UITabBarItem(title: "होम", image: UIImage(named: "home"), tag: 0)
         return UINavigationController(rootViewController: first)
     }
     
     func createSecondNC() -> UINavigationController {
         let second = secondVC()
         //let second = SecondVCwithSegmentedControl()
-        second.title = "Contact"
-        second.tabBarItem = UITabBarItem(title: "Hospital", image: UIImage(named: "hospital"), tag: 1)
+        second.title = "होस्पितल"
+        second.tabBarItem = UITabBarItem(title: "होस्पितल", image: UIImage(named: "hospital"), tag: 1)
         return UINavigationController(rootViewController: second)
     }
     
     func createThirdNC() -> UINavigationController {
         let third = thirdVC()
-        third.title = "Hospital"
-        third.tabBarItem = UITabBarItem(title: "News", image: UIImage(named: "news"), tag: 2)
+        third.title = "समाचार"
+        third.tabBarItem = UITabBarItem(title: "समाचार", image: UIImage(named: "news"), tag: 2)
         return UINavigationController(rootViewController: third)
     }
     
     func createFourthNC() -> UINavigationController {
         let fourth = fourthVC()
-        fourth.title = "News"
-        fourth.tabBarItem = UITabBarItem(title: "Menu", image: UIImage(named: "menu"), tag: 3)
+        fourth.title = "अन्य मेनू"
+        fourth.tabBarItem = UITabBarItem(title: "अन्य मेनू", image: UIImage(named: "menu"), tag: 3)
         return UINavigationController(rootViewController: fourth)
     }
     

@@ -18,7 +18,7 @@ class SearchDistrictVC: UIViewController, UIScrollViewDelegate {
     var districtData = [SearchDistrictModel]()
     var districtDataforPagination = [SearchDistrictModel]()
     var count = 0
-    
+    var searchbyDistrictViewModel = SearchbyDistrictViewModel()
     struct Cells {
         static let DistrictSearchTableCell = "SearchDistrictTableCell"
     }
@@ -29,7 +29,7 @@ class SearchDistrictVC: UIViewController, UIScrollViewDelegate {
            g.arrowSize = 5
            g.textAlignment = .center
            g.clipsToBounds = true
-           g.text = "Search District"
+           g.text = "कुनै जिल्लाको एक मात्र तथ्याङ्‌कको लागी छनोट गर्नुहोस्"
            g.font = UIFont.systemFont(ofSize: 18)
            g.layer.cornerRadius = 5
            g.layer.borderWidth = 1
@@ -72,7 +72,40 @@ class SearchDistrictVC: UIViewController, UIScrollViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        searchbyDistrictViewModel.createRequesttoSearchDistrictID { checked in
+                             switch checked {
+                             case .success(let stir):
+                                 print("I'm in home screen")
+                                 print("this is full data\(stir)")
+                                 
+                                 print("this is required data \(self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker)")
+                                 print("this is DistrictID \(self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID)")
+                             case .failure(.nothingFound):
+                                 print("status false")
+                             }
+                         }
+                   let loader =   self.loader()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.searchDistrictDropDown.optionArray = self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker
+            // ["11", "43", "26", "11", "45", "40"] to [11, 43, 26, 11, 45, 40]
+            self.searchDistrictDropDown.optionIds = self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID.compactMap { Int($0) }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.searchDistrictDropDown.optionArray = self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker
+            // ["11", "43", "26", "11", "45", "40"] to [11, 43, 26, 11, 45, 40]
+            self.searchDistrictDropDown.optionIds = self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID.compactMap { Int($0) }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.searchDistrictDropDown.optionArray = self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPicker
+            // ["11", "43", "26", "11", "45", "40"] to [11, 43, 26, 11, 45, 40]
+            self.searchDistrictDropDown.optionIds = self.searchbyDistrictViewModel.yourDataArrayUsedInTheSourceofDistrictPickerID.compactMap { Int($0) }
+        }
        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.stopLoader(loader: loader)
+        }
+        
         /*
         getDistrictListData {
         print("i'm in main thread")

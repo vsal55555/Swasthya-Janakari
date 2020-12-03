@@ -9,8 +9,9 @@
 import Foundation
 
 struct newsInfo: Decodable {
-    let image: String
+    let image: String?
     let title: String
+    let source: String
     let content: String
     let ext_link: String
     }

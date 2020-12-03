@@ -63,7 +63,7 @@ class SearchbyDistrictViewModel: NSObject, URLSessionDelegate {
                                 myData = logindata.count
                                 self.yourDataArrayUsedInTheSourceofDistrictPicker.removeAll()
                                 for i in myData! {
-                                    let tobeAppendedData = logindata[i].title
+                                    let tobeAppendedData = logindata[i].title_np
                                     let tobeAppendedID = logindata[i].id
                                     self.yourDataArrayUsedInTheSourceofDistrictPicker.append(tobeAppendedData)
                                     self.yourDataArrayUsedInTheSourceofDistrictPickerID.append(tobeAppendedID)

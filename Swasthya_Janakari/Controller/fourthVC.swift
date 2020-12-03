@@ -179,9 +179,9 @@ extension fourthVC: UITableViewDelegate, UITableViewDataSource {
 
 extension fourthVC {
     func fetchData() -> [cellInfo] {
-        let cell1 = cellInfo(image: Images.covid, title: "Dicuss of Covid-19", topic: "Symptoms, remedy, precaution")
-        let cell2 = cellInfo(image: Images.notification, title: "Notification", topic: "Informative message")
-        let cell3 = cellInfo(image: Images.number, title: "Contact Number", topic: "Urgent Numbers")
+        let cell1 = cellInfo(image: Images.covid, title: "कोभिड-१९ सम्बन्धी जानकारी", topic: "लक्षणहरु, रोकथामका उपाय, उपचार")
+        let cell2 = cellInfo(image: Images.notification, title: "नोटिफिकेशन", topic: "अत्यावश्यक सुचना, जानकारी मुलक सुचना")
+        let cell3 = cellInfo(image: Images.number, title: "टेलिफोन नम्बरहरु", topic: "आपतकालिन वा अत्यावशेक टेलिफोन नम्बरहरु")
         
         return [cell1, cell2, cell3]
     }

@@ -39,6 +39,9 @@
 		FA18D5EB252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */; };
 		FA22153C251930C9005A1B40 /* FirstHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */; };
 		FA277AD3252F09AE004053B8 /* VerifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277AD2252F09AE004053B8 /* VerifyAPI.swift */; };
+		FA27C8D3256E4261005EA84F /* DoctorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27C8D2256E4261005EA84F /* DoctorsCell.swift */; };
+		FA27C8D5256E48CA005EA84F /* doctorVCmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27C8D4256E48CA005EA84F /* doctorVCmodel.swift */; };
+		FA27C8D7256E567B005EA84F /* DoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27C8D6256E567B005EA84F /* DoctorVC.swift */; };
 		FA4A8B862568314B0014B55A /* precautionZeroCellVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A8B852568314B0014B55A /* precautionZeroCellVCModel.swift */; };
 		FA4A8B88256831930014B55A /* precautionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A8B87256831930014B55A /* precautionCell.swift */; };
 		FA54E7E9255E959A001EB8B2 /* SearchDistrictTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54E7E8255E959A001EB8B2 /* SearchDistrictTableCell.swift */; };
@@ -53,11 +56,11 @@
 		FAAEC11425618E5D0099CEC4 /* ChartVCButtonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEC11325618E5D0099CEC4 /* ChartVCButtonHeader.swift */; };
 		FAEE419E252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */; };
 		FAEE419F252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */; };
+		FAEF333825716BF300B9B84B /* DoctorDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF333725716BF300B9B84B /* DoctorDetailVC.swift */; };
 		FAF6BE4C255C373B0057A102 /* Pods_PokedexMVC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E627FD5CE9146B794ED139B8 /* Pods_PokedexMVC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FAF6BE5F255C4D300057A102 /* SearchbyDistrictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6BE5E255C4D300057A102 /* SearchbyDistrictViewModel.swift */; };
 		FAF6BE63255C4FD80057A102 /* SearchDistrictError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6BE62255C4FD80057A102 /* SearchDistrictError.swift */; };
 		FAFACD5A2542D6E4008C26CE /* SecondVCwithSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFACD592542D6E4008C26CE /* SecondVCwithSegmentedControl.swift */; };
-		FAFDD8CD25611E5600594D4C /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFDD8CC25611E5600594D4C /* ButtonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -114,6 +117,9 @@
 		FA18D5EA252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeScreen.swift; sourceTree = "<group>"; };
 		FA277AD2252F09AE004053B8 /* VerifyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyAPI.swift; sourceTree = "<group>"; };
+		FA27C8D2256E4261005EA84F /* DoctorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsCell.swift; sourceTree = "<group>"; };
+		FA27C8D4256E48CA005EA84F /* doctorVCmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorVCmodel.swift; sourceTree = "<group>"; };
+		FA27C8D6256E567B005EA84F /* DoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorVC.swift; sourceTree = "<group>"; };
 		FA4A8B852568314B0014B55A /* precautionZeroCellVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = precautionZeroCellVCModel.swift; sourceTree = "<group>"; };
 		FA4A8B87256831930014B55A /* precautionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = precautionCell.swift; sourceTree = "<group>"; };
 		FA54E7E8255E959A001EB8B2 /* SearchDistrictTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDistrictTableCell.swift; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		FAAEC11325618E5D0099CEC4 /* ChartVCButtonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVCButtonHeader.swift; sourceTree = "<group>"; };
 		FAEE419C252CDD1B00034934 /* smallCellChartVCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smallCellChartVCCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAEE419D252CDD1B00034934 /* smallCellChartVCCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = smallCellChartVCCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAEF333725716BF300B9B84B /* DoctorDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailVC.swift; sourceTree = "<group>"; };
 		FAF6BE4E255C37B00057A102 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6BE51255C387C0057A102 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6BE54255C402C0057A102 /* Swasthya Janakari */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Swasthya Janakari"; sourceTree = "<group>"; };
@@ -135,7 +142,6 @@
 		FAF6BE5E255C4D300057A102 /* SearchbyDistrictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbyDistrictViewModel.swift; sourceTree = "<group>"; };
 		FAF6BE62255C4FD80057A102 /* SearchDistrictError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDistrictError.swift; sourceTree = "<group>"; };
 		FAFACD592542D6E4008C26CE /* SecondVCwithSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVCwithSegmentedControl.swift; sourceTree = "<group>"; };
-		FAFDD8CC25611E5600594D4C /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +229,7 @@
 				FA54E7EA255E9780001EB8B2 /* SearchDistrictModel.swift */,
 				FAA415F72566CF4200A0E967 /* symptomZeroCellVCModel.swift */,
 				FA4A8B852568314B0014B55A /* precautionZeroCellVCModel.swift */,
+				FA27C8D4256E48CA005EA84F /* doctorVCmodel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 				3FD50FAC24FFFE20007FE3DE /* tableCell.swift */,
 				3F98C7E62502B5C800AEB41C /* newsCell.swift */,
 				FAA415F92566D23D00A0E967 /* symptomCell.swift */,
+				FA27C8D2256E4261005EA84F /* DoctorsCell.swift */,
 				FA4A8B87256831930014B55A /* precautionCell.swift */,
 				3FE20B0C2503EFC800EE20BC /* hospitalCell.swift */,
 				3F80FBF92506367800A26808 /* phoneCell.swift */,
@@ -260,7 +268,8 @@
 				3F98DAAC25071D8D00D36C7E /* chartVC.swift */,
 				FA22153B251930C9005A1B40 /* FirstHomeScreen.swift */,
 				FA07C1DB255CEF0600ACDB7E /* SearchDistrictVC.swift */,
-				FAFDD8CC25611E5600594D4C /* ButtonViewController.swift */,
+				FA27C8D6256E567B005EA84F /* DoctorVC.swift */,
+				FAEF333725716BF300B9B84B /* DoctorDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -445,6 +454,7 @@
 				3FD50FAF2500113F007FE3DE /* Constants.swift in Sources */,
 				3F80FBF82506358F00A26808 /* phoneInfo.swift in Sources */,
 				3FB5DACE24F4FECF005AD650 /* AppDelegate.swift in Sources */,
+				FAEF333825716BF300B9B84B /* DoctorDetailVC.swift in Sources */,
 				3FEC609424FD9E9F00678FFA /* fourthVC.swift in Sources */,
 				3FE2E6CD250698B700AD2852 /* zeroCellVC.swift in Sources */,
 				FA555AD52527419100EF85A6 /* cellChartVCCollectionViewCell.swift in Sources */,
@@ -468,9 +478,12 @@
 				3FB5DAD024F4FECF005AD650 /* SceneDelegate.swift in Sources */,
 				3F80FBFA2506367800A26808 /* phoneCell.swift in Sources */,
 				3FB5DAE824F50535005AD650 /* Extensions.swift in Sources */,
+				FA27C8D7256E567B005EA84F /* DoctorVC.swift in Sources */,
+				FA27C8D5256E48CA005EA84F /* doctorVCmodel.swift in Sources */,
 				FAFACD5A2542D6E4008C26CE /* SecondVCwithSegmentedControl.swift in Sources */,
 				FAAEC11425618E5D0099CEC4 /* ChartVCButtonHeader.swift in Sources */,
 				FA18D5EB252C5DC500AA9DB2 /* HeaderCollectionReusableView.swift in Sources */,
+				FA27C8D3256E4261005EA84F /* DoctorsCell.swift in Sources */,
 				FA22153C251930C9005A1B40 /* FirstHomeScreen.swift in Sources */,
 				FA4A8B88256831930014B55A /* precautionCell.swift in Sources */,
 				3FE2E6CF2506991000AD2852 /* firstCellVC.swift in Sources */,
@@ -480,7 +493,6 @@
 				3FB5DAEA24F5783F005AD650 /* Cell.swift in Sources */,
 				FA07C1DC255CEF0600ACDB7E /* SearchDistrictVC.swift in Sources */,
 				FA18D5E9252C48DA00AA9DB2 /* Reachability.swift in Sources */,
-				FAFDD8CD25611E5600594D4C /* ButtonViewController.swift in Sources */,
 				FA4A8B862568314B0014B55A /* precautionZeroCellVCModel.swift in Sources */,
 				3F98C7E52502A9A000AEB41C /* newsInfo.swift in Sources */,
 			);
@@ -631,6 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KU2VG7M96;
 				INFOPLIST_FILE = Swasthya_Janakari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,7 +652,7 @@
 				PRODUCT_NAME = Swasthya_Janakari;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -652,6 +665,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3KU2VG7M96;
 				INFOPLIST_FILE = Swasthya_Janakari/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,7 +674,7 @@
 				PRODUCT_NAME = Swasthya_Janakari;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

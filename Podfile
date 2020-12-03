@@ -8,4 +8,5 @@ target 'Swasthya_Janakari' do
   # Pods for PokedexMVC
   pod 'SwiftMessages'
   pod 'iOSDropDown'
+ 
 end

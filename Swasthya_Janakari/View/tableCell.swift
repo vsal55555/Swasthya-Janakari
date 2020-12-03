@@ -12,7 +12,14 @@ class tableCell: UITableViewCell {
     
     var tableImageView = UIImageView()
     var tableHeadTitleLabel = UILabel()
-    var tableTailTitleLabel = UILabel()
+    var tableTailTitleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 2
+       // label.sizeToFit()
+        label.adjustsFontSizeToFitWidth = true
+        label.font = UIFont.systemFont(ofSize: 17)
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,7 +60,7 @@ class tableCell: UITableViewCell {
         tableHeadTitleLabel.textColor = .black
         tableTailTitleLabel.textColor = .gray
         tableHeadTitleLabel.numberOfLines = 0
-        tableTailTitleLabel.numberOfLines = 0
+        //tableTailTitleLabel.numberOfLines = 0
     }
     
     func setImageConstraints() {
@@ -75,8 +82,8 @@ class tableCell: UITableViewCell {
         tableTailTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         tableTailTitleLabel.topAnchor.constraint(equalTo: tableHeadTitleLabel.bottomAnchor, constant: 12).isActive = true
         tableTailTitleLabel.leadingAnchor.constraint(equalTo: tableImageView.trailingAnchor, constant: 20).isActive = true
-        tableTailTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        tableTailTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        //tableTailTitleLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        //tableTailTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
     }
 }
 

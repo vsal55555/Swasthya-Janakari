@@ -1,32 +1,35 @@
 //
-//  thirdVC.swift
-//  PokedexMVC
+//  DoctorDetailVC.swift
+//  Swasthya_Janakari
 //
-//  Created by BSAL-MAC on 9/1/20.
+//  Created by macbook on 11/25/20.
 //  Copyright © 2020 BSAL-MAC. All rights reserved.
 //
 
 import UIKit
-import SafariServices
-import SwiftMessages   //package provides the reachability class for internet connectivity
+import SwiftMessages
 
-class thirdVC: UIViewController {
+class DoctorVC: UIViewController {
     
     //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
     
     var tableview = UITableView()
-    var newsInfos: [newsInfo] = []
+    //var newsInfos: [newsInfo] = []
     let cellSpacingHeight: CGFloat = 20
-    var news = [newsInfo]()
+    var doctorVCmodels = [doctorVCmodel]()
 
     struct Cells {
-        static let tablecell = "newsCell"
+        static let tablecell = "DoctorsCell"
     }
     
     override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
+        let loader =   self.loader()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.stopLoader(loader: loader)}
+        
     // Do any additional setup after loading the view.
         getJSON {
             print("*****************i'm in reload******************")
@@ -37,6 +40,8 @@ class thirdVC: UIViewController {
 }
      //MARK: - REACHABILITY CLASS CHECKS FOR INTERNET CONNECTIVITY WHEN VIEWWILLAPPEAR AND RESUME APP WHEN IT'S SWITCH FROM OFFLINE TO ONLINE
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         super.viewWillAppear(animated)
       getJSON {
                      self.tableview.reloadData()
@@ -50,7 +55,7 @@ class thirdVC: UIViewController {
         handleReachability()
     }
     
-    //MARK: -  REACHABILITY CLASS METHODS 
+    //MARK: -  REACHABILITY CLASS METHODS
     fileprivate func handleReachability() {
         NotificationCenter.default.addObserver(forName: .reachabilityChanged, object: reachability, queue: .main) { (notification) in
             if let MyRechability = notification.object as? Reachability {
@@ -99,10 +104,12 @@ class thirdVC: UIViewController {
         view.addSubview(tableview)
         tableview.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
         setTableViewdelegates()
-        tableview.rowHeight = 120
-        tableview.register(newsCell.self, forCellReuseIdentifier: "newsCell")
+        tableview.rowHeight = 180
+        tableview.register(DoctorsCell.self, forCellReuseIdentifier: "DoctorsCell")
         tableview.pin(to: view)
     }
+    
+ 
     
     func setTableViewdelegates() {
         tableview.delegate = self
@@ -111,12 +118,12 @@ class thirdVC: UIViewController {
 
     func getJSON(completed: @escaping () -> ()) {
         print("*****************task is starting******************")
-        let url = URL(string: "http://covid.hostingofprologic.com/api/news/listby")
+        let url = URL(string: "http://covid.hostingofprologic.com/api/doctor/listby")
         
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if error == nil {
                 do {
-                    self.news = try JSONDecoder().decode([newsInfo].self, from: data!)
+                    self.doctorVCmodels = try JSONDecoder().decode([doctorVCmodel].self, from: data!)
                     DispatchQueue.main.async {
                         completed()
                     }
@@ -130,10 +137,10 @@ class thirdVC: UIViewController {
    
 }
 
-extension thirdVC: UITableViewDelegate, UITableViewDataSource {
+extension DoctorVC: UITableViewDelegate, UITableViewDataSource {
     
      func numberOfSections(in tableView: UITableView) -> Int {
-              return news.count
+              return doctorVCmodels.count
           }
        //set the space between the sections
        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -147,47 +154,66 @@ extension thirdVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
+       
+              
         return headerView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         
-        let cell = tableview.dequeueReusableCell(withIdentifier: Cells.tablecell) as! newsCell
-        cell.layer.cornerRadius = 6
+        let cell = tableview.dequeueReusableCell(withIdentifier: Cells.tablecell) as! DoctorsCell
+        
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
         let shadowPath2 = UIBezierPath(rect: cell.bounds)
         cell.layer.masksToBounds = false
         cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(3.0))
-        cell.layer.shadowOpacity = 0.35
+        cell.layer.shadowOffset = CGSize(width: CGFloat(5.0), height: CGFloat(10.0))
+        cell.layer.shadowOpacity = 0.5
         cell.layer.shadowPath = shadowPath2.cgPath
-        
-        let newsinfo = news[indexPath.section]
-        cell.set(newsinfo: newsinfo)
-    
+       
+ 
+        let doctorVCmodel = doctorVCmodels[indexPath.section]
+        cell.set(doctorVCmodel: doctorVCmodel)
+        cell.callButton.addTarget(self, action: #selector(button1SignIn), for: .touchUpInside)
+      
         return cell
         
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedrow = self.news[indexPath.section]
-        let urlString = selectedrow.ext_link
-        let url = try URL(string: urlString)
-        let safariVC = SFSafariViewController(url: url!)
-        safariVC.view.tintColor = .mainPink()
-        safariVC.delegate = self
-        present(safariVC, animated: true, completion: nil)
-    }
+    @objc func button1SignIn(){
+        self.makePhoneCall(phoneNumber: "9804088782")
+     }
+   func makePhoneCall(phoneNumber: String) {
+
+       if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+
+           let alert = UIAlertController(title: ("Do you want to Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+               UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+           }))
+
+           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+           //vc.present(alert, animated: true, completion: nil)
+         alert.present(DoctorVC(), animated: true, completion: nil)
+       }
+   }
     
     
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         //let selectedrow = self.news[indexPath.section]
+         let vc = DoctorDetailVC()
+         vc.doctorNameLabel.text = doctorVCmodels[indexPath.section].name
+         vc.specialistLabel.text = doctorVCmodels[indexPath.section].specialist
+    vc.emailLabel.text = doctorVCmodels[indexPath.section].email
+    vc.phoneLabel.text = doctorVCmodels[indexPath.section].mobile
+    vc.doctorBrief.text = doctorVCmodels[indexPath.section].brief
+         vc.doctorsImageView.downloaded(from: URL(string: doctorVCmodels[indexPath.section].image)!)
+         self.navigationController?.pushViewController(vc, animated: true)
+     }
+
 }
 
-
-extension thirdVC: SFSafariViewControllerDelegate {
-    
-    //this gets call when webpage is cancelled
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
 
  

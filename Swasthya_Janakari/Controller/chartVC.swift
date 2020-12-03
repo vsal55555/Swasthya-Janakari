@@ -79,6 +79,8 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         //HeaderCollectionReusableView
         collectionView?.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
+        collectionView?.register(HeaderCollectionReusableView2.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView2.identifier)
+        collectionView?.register(HeaderCollectionReusableView3.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView3.identifier)
         
         //FooterCollectionReusableView
         collectionView?.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterCollectionReusableView.identifier)
@@ -254,14 +256,41 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             
         }  */
         //MARK: -HEADER COLECTIONRESUABLEVIEW
+        
+        
+        if indexPath.section == 0 {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
+        
+        header.configure()
+            header.completion = {
+                let vc = SearchDistrictVC()
+                self.navigationController?.pushViewController(vc, animated: true)
+                let loader =   self.loader()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.stopLoader(loader: loader)
+                }
+            }
+        return header
+        }
+        if indexPath.section == 1 {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView2.identifier, for: indexPath) as! HeaderCollectionReusableView2
+            
+            header.configure()
+            return header
+        }
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView3.identifier, for: indexPath) as! HeaderCollectionReusableView3
         
         header.configure()
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 50)
+        
+        if section == 0 {
+            return CGSize(width: view.frame.size.width, height: 64)
+        }
+        
+        return CGSize(width: view.frame.size.width, height: 40)
     }
     /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -270,7 +299,8 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     */
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 0 {
-           return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+           //return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
+           return UIEdgeInsets(top: 54, left: 8, bottom: 10, right: 8)
         }
         if section == 1 {
                   return UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
