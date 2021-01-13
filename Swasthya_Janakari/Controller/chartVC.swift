@@ -30,15 +30,15 @@ class chartVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     var upperTitle: [upperTitleCell] = []
     var myArrayforUpperTitle = [String]()
-    let lowerTitle = ["Tested", "Deaths", "Recovered"]
+    let lowerTitle = ["सङ्‌क्रमित", "निको भएको", "मृत्यु"]
     
     var upperSquareTitle: [upperSquareTitleCell] = []
     var myArrayforUpperSquareTitle = [String]()
-    let upperTitleSquare = ["Tested", "Deaths", "Recovered", "Infected"]
+    let upperTitleSquare = ["परिक्षण", "सङ्‌क्रमित", "निको भएको", "मृत्यु"]
     
     var lowerSquareTitle: [lowerSquareTitleCell] = []
     var myArrayforlowerSquareTitle = [String]()
-    let lowerTitleSquare = ["Tested", "Deaths", "Recovered", "Infected"]
+    let lowerTitleSquare = ["सक्रिय सङ्‌क्रमित", "सङ्‌क्रमित", "निको भएको", "मृत्यु"]
     
     //Mark: Tabbar Controller
     var myArrayfornumberupperTitleLabel1: String = ""

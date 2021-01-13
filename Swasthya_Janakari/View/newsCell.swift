@@ -11,7 +11,7 @@ import UIKit
 
 class newsCell: UITableViewCell {
     
-    var tableImageView = UIImageView()
+    //var tableImageView = UIImageView()
     
     var tableHeadTitleLabel: UILabel = {
         let label = UILabel()
@@ -30,6 +30,13 @@ class newsCell: UITableViewCell {
            label.font = UIFont.systemFont(ofSize: 17)
            return label
        }()
+    
+    let tableImageView: UIImageView = {
+              let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill//.scaleAspectFill
+              iv.clipsToBounds = true
+              return iv
+          }()
     
     var sourceTitleLabel = UILabel()
     
@@ -82,9 +89,9 @@ class newsCell: UITableViewCell {
     func setImageConstraints() {
         tableImageView.translatesAutoresizingMaskIntoConstraints = false
         tableImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        tableImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -8).isActive = true
+        tableImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -58).isActive = true
         tableImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        tableImageView.widthAnchor.constraint(equalTo: tableImageView.heightAnchor, multiplier: 16/9).isActive = true
+        tableImageView.widthAnchor.constraint(equalTo: tableImageView.heightAnchor, multiplier: 1.8).isActive = true
     }
     
     func setHeadTitleLabelConstraints() {

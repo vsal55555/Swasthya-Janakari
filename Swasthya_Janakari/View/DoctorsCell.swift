@@ -40,7 +40,7 @@ class DoctorsCell: UITableViewCell {
         button.layer.cornerRadius = 20
         let font = UIFont.systemFont(ofSize: 16)
         let attributedTitle = NSMutableAttributedString(string:
-        "Dail Number ", attributes: [NSAttributedString.Key.foregroundColor:
+        "कल गनुहोस्", attributes: [NSAttributedString.Key.foregroundColor:
             UIColor.white, NSAttributedString.Key.font : font ])
         
         button.setAttributedTitle(attributedTitle, for: .normal)
@@ -101,9 +101,32 @@ class DoctorsCell: UITableViewCell {
         doctorField.textColor = .init(red: 0.00, green: 0.24, blue: 0.12, alpha: 1.00)
         emailLabel.text = doctorVCmodel.email
         phoneLabel.text = doctorVCmodel.mobile
-        
-       // let test = String(text.filter { !" \n\t\r".contains($0) })
-       // tableTailTitleLabel.text = String(symptomZeroCellVCmodel.brief.filter { !"<pre></pre>".contains($0) })//symptomZeroCellVCmodel.brief
+        callButton.addTarget(self, action: #selector(button1SignIn), for: .touchUpInside)
+    }
+    
+    
+    
+    @objc func button1SignIn(){
+        let offsetIndex1: String.Index = phoneLabel.text!.index(phoneLabel.text!.startIndex, offsetBy: 05)
+        let myNumber = phoneLabel.text!.substring(from: offsetIndex1)
+        self.makePhoneCall(phoneNumber: myNumber)
+      }
+    
+    func makePhoneCall(phoneNumber: String) {
+
+        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+
+            let alert = UIAlertController(title: ("Do you want to Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+                UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+            }))
+
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            //vc.present(alert, animated: true, completion: nil)
+          //alert.present(DoctorVC(), animated: true, completion: nil)
+          DispatchQueue.main.async {
+         UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
+         }    }
     }
     
     func configureImageView() {

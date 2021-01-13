@@ -45,6 +45,7 @@ class tableCell: UITableViewCell {
         tableImageView.contentMode = .scaleAspectFill
         tableHeadTitleLabel.text = cellinfo.title
         tableTailTitleLabel.text = cellinfo.topic
+        
     }
     
     func configureImageView() {

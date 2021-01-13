@@ -22,7 +22,8 @@ class SearchDistrictVC: UIViewController, UIScrollViewDelegate {
     struct Cells {
         static let DistrictSearchTableCell = "SearchDistrictTableCell"
     }
-   
+    
+    
     let  searchDistrictDropDown: DropDown = {
            let g = DropDown() //(frame: CGRect(x: 16, y: 100, width: 382, height: 48))
            g.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +42,14 @@ class SearchDistrictVC: UIViewController, UIScrollViewDelegate {
         v.textColor = .black
         return v
     }()
+    
+    let arrowLabel: UIImageView = {
+          let v = UIImageView()
+          v.image = UIImage(systemName: "arrow.right")
+          v.contentMode = .scaleAspectFill
+          return v
+      }()
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -66,6 +75,9 @@ class SearchDistrictVC: UIViewController, UIScrollViewDelegate {
                 self.tableview.reloadData()
             }
         }
+        
+//        view.addSubview(arrowLabel)
+//        arrowLabel.anchors(top: searchDistrictDropDown.topAnchor, topPad: 12, bottom: nil, bottomPad: 0, right: searchDistrictDropDown.rightAnchor, rightPad: 04, height: 30, width: 30)
         
          configureTableView()
          

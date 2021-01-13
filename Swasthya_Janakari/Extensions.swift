@@ -34,8 +34,8 @@ extension UIView {
 
 extension UIViewController {
     func loader() -> UIAlertController {
-            let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+            let alert = UIAlertController(title: nil, message: "धैर्य गनुहोस् डाटा लोड हुदैछ ।", preferredStyle: .alert)
+            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 5, width: 50, height: 50))
             loadingIndicator.hidesWhenStopped = true
             loadingIndicator.style = UIActivityIndicatorView.Style.large
             loadingIndicator.startAnimating()

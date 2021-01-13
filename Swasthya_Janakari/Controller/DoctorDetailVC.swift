@@ -138,7 +138,7 @@ class DoctorDetailVC: UIViewController {
                  button.layer.cornerRadius = 10
                  let font = UIFont.systemFont(ofSize: 16)
                  let attributedTitle = NSMutableAttributedString(string:
-                 "Dial Number", attributes: [NSAttributedString.Key.foregroundColor:
+                 "कल गनुहोस्", attributes: [NSAttributedString.Key.foregroundColor:
                      UIColor.white, NSAttributedString.Key.font : font ])
                  button.addTarget(self, action: #selector(clickedButton1), for: .touchUpInside)
                  button.setAttributedTitle(attributedTitle, for: .normal)
@@ -361,7 +361,7 @@ class DoctorDetailVC: UIViewController {
         emailLabel.homeAnchor(top: specialistLabel.bottomAnchor, left: mailIcon.rightAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, height: 18)
         
         scrollView.addSubview(phoneIcon)
-        phoneIcon.homeAnchor(top: mailIcon.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, width: 25, height: 25)
+        phoneIcon.homeAnchor(top: mailIcon.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, paddingTop: 04, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, width: 25, height: 25)
         
         scrollView.addSubview(phoneLabel)
         phoneLabel.homeAnchor(top: emailLabel.bottomAnchor, left: phoneIcon.rightAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, height: 18)

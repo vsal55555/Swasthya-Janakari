@@ -13,7 +13,13 @@ class SearchDistrictTableCell:  UITableViewCell {
     
     
     var fixedUpperDistrictTitleLabel = UILabel()
-    var lowerDistrictTitleLabel = UILabel()
+    var lowerDistrictTitleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.sizeToFit()
+        return label
+    }()
     
     var fixedUpperInfectedTitleLabel = UILabel()
     var lowerInfectedTitleLabel = UILabel()
@@ -52,21 +58,25 @@ class SearchDistrictTableCell:  UITableViewCell {
     
     func set(districtdata: SearchDistrictModel) {
       
-        fixedUpperDistrictTitleLabel.text = "District"
+        fixedUpperDistrictTitleLabel.text = "जिल्ला"
+        fixedUpperDistrictTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         lowerDistrictTitleLabel.text = districtdata.title_np
         
                
-        fixedUpperInfectedTitleLabel.text = "Infected"
+        fixedUpperInfectedTitleLabel.text = "सङ्‌क्रमित"
+        fixedUpperInfectedTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         fixedUpperInfectedTitleLabel.textColor = .orange
         lowerInfectedTitleLabel.text = districtdata.male
         lowerInfectedTitleLabel.textColor = .orange
                
-        fixedUpperRecoveredTitleLabel.text = "Recoverd"
+        fixedUpperRecoveredTitleLabel.text = "निको"
+        fixedUpperRecoveredTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         fixedUpperRecoveredTitleLabel.textColor = .green
         lowerRecoveredTitleLabel.text = districtdata.recover
         lowerRecoveredTitleLabel.textColor = .green
                
-        fixedUpperDiedTitleLabel.text = "Dead"
+        fixedUpperDiedTitleLabel.text = "मृत्यु"
+        fixedUpperDiedTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         fixedUpperDiedTitleLabel.textColor = .red
         lowerDiedTitleLabel.text = districtdata.death
         lowerDiedTitleLabel.textColor = .red
@@ -83,11 +93,12 @@ class SearchDistrictTableCell:  UITableViewCell {
     func setDistrictTitleLabelConstraints() {
         fixedUpperDistrictTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         fixedUpperDistrictTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 04).isActive = true
-        fixedUpperDistrictTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        fixedUpperDistrictTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: frame.width*0.1).isActive = true
         fixedUpperDistrictTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         lowerDistrictTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         lowerDistrictTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+       // lowerDistrictTitleLabel.centerXAnchor.constraint(equalTo: fixedUpperDistrictTitleLabel.centerXAnchor).isActive = true
         lowerDistrictTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
        // lowerDistrictTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         lowerDistrictTitleLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -96,26 +107,28 @@ class SearchDistrictTableCell:  UITableViewCell {
     func setInfectedTitleLabelConstraints() {
         fixedUpperInfectedTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         fixedUpperInfectedTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 04).isActive = true
-        fixedUpperInfectedTitleLabel.leadingAnchor.constraint(equalTo: fixedUpperDistrictTitleLabel.trailingAnchor, constant: -38).isActive = true
+        fixedUpperInfectedTitleLabel.leadingAnchor.constraint(equalTo: fixedUpperDistrictTitleLabel.trailingAnchor, constant: -frame.width*0.1).isActive = true
         fixedUpperInfectedTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         fixedUpperInfectedTitleLabel.trailingAnchor.constraint(equalTo: fixedUpperRecoveredTitleLabel.leadingAnchor, constant: -38).isActive = true
         
         lowerInfectedTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         lowerInfectedTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
-        lowerInfectedTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150).isActive = true
+        lowerInfectedTitleLabel.centerXAnchor.constraint(equalTo: fixedUpperInfectedTitleLabel.centerXAnchor).isActive = true
+//        lowerInfectedTitleLabel.leadingAnchor.constraint(equalTo: lowerDistrictTitleLabel.trailingAnchor, constant: 16).isActive = true
         lowerInfectedTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
        
     }
     func setRecoveredTitleLabelConstraints() {
         fixedUpperRecoveredTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         fixedUpperRecoveredTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 04).isActive = true
-        fixedUpperRecoveredTitleLabel.leadingAnchor.constraint(equalTo: fixedUpperInfectedTitleLabel.trailingAnchor, constant: -38).isActive = true
+        fixedUpperRecoveredTitleLabel.leadingAnchor.constraint(equalTo: fixedUpperInfectedTitleLabel.trailingAnchor, constant: -frame.width*0.7).isActive = true
         fixedUpperRecoveredTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         fixedUpperRecoveredTitleLabel.trailingAnchor.constraint(equalTo: fixedUpperDiedTitleLabel.leadingAnchor, constant: -38).isActive = true
         
         lowerRecoveredTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         lowerRecoveredTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
-        lowerRecoveredTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 246).isActive = true
+        lowerRecoveredTitleLabel.centerXAnchor.constraint(equalTo: fixedUpperRecoveredTitleLabel.centerXAnchor).isActive = true
+//        lowerRecoveredTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: frame.width*0.85).isActive = true
         lowerRecoveredTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
        
     }
@@ -128,7 +141,8 @@ class SearchDistrictTableCell:  UITableViewCell {
         lowerDiedTitleLabel.translatesAutoresizingMaskIntoConstraints = false
     
         lowerDiedTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
-        lowerDiedTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 346).isActive = true
+        lowerDiedTitleLabel.centerXAnchor.constraint(equalTo: fixedUpperDiedTitleLabel.centerXAnchor).isActive = true
+        //lowerDiedTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: frame.width*1.1).isActive = true
         lowerDiedTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }

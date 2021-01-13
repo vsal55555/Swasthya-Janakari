@@ -30,8 +30,7 @@ class zeroCellVC: UIViewController {
           lazy var segmentedControl: UISegmentedControl = {
               let control = UISegmentedControl(items: items)
               control.selectedSegmentIndex = 0
-              control.widthAnchor.constraint(equalToConstant: 340).isActive = true
-              //control.backgroundColor = .mainPink()
+            control.heightAnchor.constraint(equalToConstant: 30).isActive = true
               control.selectedSegmentTintColor = .mainPink()
               control.addTarget(self, action: #selector(handleSegmentedControlValueChanged(_:)), for: .valueChanged)
               return control
@@ -51,19 +50,9 @@ class zeroCellVC: UIViewController {
         
         view.addSubview(LowerTitleLabel)
         LowerTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        LowerTitleLabel.homeAnchor(top: UpperTitleLabel.bottomAnchor, paddingTop: 04,  width: 350, height: 30)
+        LowerTitleLabel.topAnchor.constraint(equalTo: UpperTitleLabel.bottomAnchor, constant: 16).isActive = true
+        LowerTitleLabel.homeAnchor(top: UpperTitleLabel.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 16)
 
-        view.addSubview(LowerTitleLabel2)
-        LowerTitleLabel2.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        LowerTitleLabel2.homeAnchor(top: LowerTitleLabel.bottomAnchor, paddingTop: 04,  width: 350, height: 30)
-        
-        view.addSubview(LowerTitleLabel3)
-        LowerTitleLabel3.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        LowerTitleLabel3.homeAnchor(top: LowerTitleLabel2.bottomAnchor, paddingTop: 04,  width: 350, height: 30)
-        
-        view.addSubview(LowerTitleLabel4)
-        LowerTitleLabel4.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        LowerTitleLabel4.homeAnchor(top: LowerTitleLabel3.bottomAnchor, paddingTop: 04,  width: 350, height: 30)
         return view
     }()
     
@@ -79,7 +68,7 @@ class zeroCellVC: UIViewController {
     let UpperTitleLabel: UILabel = {
           let label = UILabel()
           label.textAlignment = .center
-          label.text = "Call for the emergency"
+          label.text = "तुरुन्त सम्पर्क गर्नुहोस्"
           label.font = UIFont.boldSystemFont(ofSize: 17)
           label.textColor = .black
           return label
@@ -87,37 +76,17 @@ class zeroCellVC: UIViewController {
     
     let LowerTitleLabel: UILabel = {
              let label = UILabel()
-             label.textAlignment = .left
-             label.text = "This article is about the group of viruses"
+            label.sizeToFit()
+            label.numberOfLines = 0
+            label.textAlignment = .left
+      
+             label.text = "यदि तपाई कोरोनाभाइरस रोग २०१९ (कोभिड- १९) को लक्षणहरू विकास भएको अनुभब गर्नुभयो भने तपाई निम्न नम्बरहरुमा हामिलाई सम्पर्क गर्नुहुन अनुरोध गर्दछौ।"
              label.font = UIFont.systemFont(ofSize: 17)
              label.textColor = .black
              return label
          }()
     
-    let LowerTitleLabel2: UILabel = {
-                let label = UILabel()
-                label.textAlignment = .left
-                label.text = "For the disease involved in the ongoing"
-                label.font = UIFont.systemFont(ofSize: 17)
-                label.textColor = .black
-                return label
-            }()
-    let LowerTitleLabel3: UILabel = {
-                let label = UILabel()
-                label.textAlignment = .left
-                label.text = "pandemic, see Coronavirus disease 2019."
-                label.font = UIFont.systemFont(ofSize: 17)
-                label.textColor = .black
-                return label
-            }()
-    let LowerTitleLabel4: UILabel = {
-                let label = UILabel()
-                label.textAlignment = .left
-                label.text = "see Coronavirus disease 2019."
-                label.font = UIFont.systemFont(ofSize: 17)
-                label.textColor = .black
-                return label
-            }()
+
     
     let Button1: UIButton = {
                let button = UIButton(type: .system)
@@ -125,7 +94,7 @@ class zeroCellVC: UIViewController {
                button.layer.cornerRadius = 10
                let font = UIFont.systemFont(ofSize: 16)
                let attributedTitle = NSMutableAttributedString(string:
-               "9841255834", attributes: [NSAttributedString.Key.foregroundColor:
+               "९८४१२५५८३४", attributes: [NSAttributedString.Key.foregroundColor:
                    UIColor.white, NSAttributedString.Key.font : font ])
                button.addTarget(self, action: #selector(clickedButton1), for: .touchUpInside)
                button.setAttributedTitle(attributedTitle, for: .normal)
@@ -138,7 +107,7 @@ class zeroCellVC: UIViewController {
                button.layer.cornerRadius = 10
                let font = UIFont.systemFont(ofSize: 16)
                let attributedTitle = NSMutableAttributedString(string:
-               "9841255837", attributes: [NSAttributedString.Key.foregroundColor:
+               "९८४१२५५८३७", attributes: [NSAttributedString.Key.foregroundColor:
                    UIColor.white, NSAttributedString.Key.font : font ])
                button.addTarget(self, action: #selector(clickedButton2), for: .touchUpInside)
                button.setAttributedTitle(attributedTitle, for: .normal)
@@ -210,7 +179,8 @@ class zeroCellVC: UIViewController {
                 self.view.addSubview(self.containerView1)
                 self.containerView1.clipsToBounds = true
                 self.containerView1.layer.cornerRadius = 2
-                self.containerView1.anchors(top: self.view.safeAreaLayoutGuide.topAnchor, topPad: 16, bottom: nil, bottomPad: 0, left: self.view.leftAnchor, leftPad: 16, right: self.view.rightAnchor, rightPad: 16, height: self.view.frame.height/2 - 100, width: self.view.frame.width - 32)
+                self.containerView1.anchors(top: self.view.safeAreaLayoutGuide.topAnchor, topPad: 16, bottom: nil, bottomPad: 0, left: self.view.leftAnchor, leftPad: 16, right: self.view.rightAnchor, rightPad: 16, height: self.view.frame.height/2 - 50, width: self.view.frame.width - 32)
+             
                 self.view.addSubview(self.Button1)
                 self.Button1.anchors(top: self.containerView1.bottomAnchor, topPad: 16, bottom: nil, bottomPad: 0, left: self.view.leftAnchor, leftPad: 16, right: self.view.rightAnchor, rightPad: 16, height: 50, width: 0)
                 self.view.addSubview(self.callLabel)

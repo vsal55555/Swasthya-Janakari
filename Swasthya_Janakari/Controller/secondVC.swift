@@ -14,7 +14,7 @@ class secondVC: UIViewController {
     
     //MARK: - REACHABILITY CLASS OBJECT
     let reachability = Reachability()
-    
+    let urlString = ""
     var tableview = UITableView()
       
         let cellSpacingHeight: CGFloat = 20
@@ -28,7 +28,8 @@ class secondVC: UIViewController {
        lazy var segmentedControl: UISegmentedControl = {
            let control = UISegmentedControl(items: items)
            control.selectedSegmentIndex = 0
-           control.widthAnchor.constraint(equalToConstant: 380).isActive = true
+        control.heightAnchor.constraint(equalToConstant: 30).isActive = true
+           //control.widthAnchor.constraint(equalToConstant: 380).isActive = true
            //control.backgroundColor = .mainPink()
            control.selectedSegmentTintColor = .mainPink()
            control.addTarget(self, action: #selector(handleSegmentedControlValueChanged(_:)), for: .valueChanged)
@@ -39,7 +40,7 @@ class secondVC: UIViewController {
 
         override func viewDidLoad() {
         super.viewDidLoad()
-            view.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
+        view.backgroundColor = .init(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
             
         navigationItem.titleView = segmentedControl
         configureTableView()
@@ -250,6 +251,32 @@ class secondVC: UIViewController {
             headerView.backgroundColor = UIColor.clear
             return headerView
         }
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let selectedrow = self.hospitals[indexPath.section]
+            let urlString = selectedrow.brief
+            print(urlString)
+            clickedButton1(urlString: urlString)
+        }
+        
+        func clickedButton1(urlString: String){
+            let offsetIndex1: String.Index = urlString.index(urlString.startIndex, offsetBy: 05)
+            let myNumber = urlString.substring(from: offsetIndex1)
+            self.makePhoneCall(phoneNumber: myNumber)
+        }
+        
+        func makePhoneCall(phoneNumber: String) {
+
+                    if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+
+                        let alert = UIAlertController(title: ("Do you want to Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+                            UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+                        }))
+
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
@@ -262,12 +289,9 @@ class secondVC: UIViewController {
             cell.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(3.0))
             cell.layer.shadowOpacity = 0.35
             cell.layer.shadowPath = shadowPath2.cgPath
-            
             let hospitalinfo = hospitals[indexPath.section]
             cell.set(hospitalinfo: hospitalinfo)
             
-            
-                     
             return cell
             
         }

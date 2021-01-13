@@ -11,7 +11,16 @@ import UIKit
 class hospitalCell: UITableViewCell {
     
     
-    var tableTitleLabel = UILabel()
+    var tableTitleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.textAlignment = .left
+        label.textColor = .init(red: 0.00, green: 0.24, blue: 0.12, alpha: 1.00)
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.sizeToFit()
+        return label
+        
+    }()
     var tableHeadTitleLabel = UILabel()
     var tableTailTitleLabel = UILabel()
     
@@ -22,10 +31,17 @@ class hospitalCell: UITableViewCell {
         addSubview(tableHeadTitleLabel)
         addSubview(tableTailTitleLabel)
         
+        let tap = UITapGestureRecognizer(target: self, action: Selector("phoneLabelTapped"))
+        tableTailTitleLabel.addGestureRecognizer(tap)
+        
         configureTitleLabel()
         setTitleLabelConstraints()
         setHeadTitleLabelConstraints()
         setTailTitleLabelConstraint()
+    }
+    
+    func phoneLabelTapped(sender: UITapGestureRecognizer) {
+        print(tableTailTitleLabel.text)
     }
     
     required init?(coder: NSCoder) {
@@ -37,24 +53,28 @@ class hospitalCell: UITableViewCell {
         //let url = URL(string: urlString)
         tableTitleLabel.text = hospitalinfo.title
         tableHeadTitleLabel.text = hospitalinfo.address
-        tableTailTitleLabel.text = hospitalinfo.brief
+        tableTailTitleLabel.text = (hospitalinfo.brief == "") ? "N/A" : hospitalinfo.brief
+        print("*********\(hospitalinfo.brief)***********")
     }
     
     
+    
+        
+   
     func configureTitleLabel() {
        // tableTitleLabel.backgroundColor = .systemPink
        // tableHeadTitleLabel.backgroundColor = .green
         //tableTailTitleLabel.backgroundColor = .red
-        tableTitleLabel.numberOfLines = 0
+        //tableTitleLabel.numberOfLines = 0
         tableHeadTitleLabel.numberOfLines = 0
         tableTailTitleLabel.numberOfLines = 0
     }
     
     func setTitleLabelConstraints() {
         tableTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        tableTitleLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 08).isActive = true
         tableTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-        tableTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        //tableTitleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         tableTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
     }
     
@@ -73,4 +93,5 @@ class hospitalCell: UITableViewCell {
         tableTailTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
       //  tableTailTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
+  
 }

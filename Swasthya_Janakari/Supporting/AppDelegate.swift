@@ -50,23 +50,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         getData(completed: { data, data2, data3, data4  in
           
             print("fetching all the data")
-            self.myArrayforUpperTitle.append(data[0].karnali_death)
+            self.myArrayforUpperTitle.append(data2[0].nepal_affected)//interchange with below
             self.myArrayforUpperTitle.append(data[0].karnali_recovered)
-            self.myArrayforUpperTitle.append(data[0].karnali_tested)
+            self.myArrayforUpperTitle.append(data[0].karnali_death)
             
-            self.myArrayforUpperSquareTitle.append(data2[0].nepal_affected)
-            self.myArrayforUpperSquareTitle.append(data2[0].nepal_death)
+            self.myArrayforUpperSquareTitle.append(data[0].karnali_tested) //changed with above one
             self.myArrayforUpperSquareTitle.append(data2[0].nepal_tested)
             self.myArrayforUpperSquareTitle.append(data2[0].nepal_recovered)
+            self.myArrayforUpperSquareTitle.append(data2[0].nepal_death)
             
-            self.myArrayforlowerSquareTitle.append(data3[0].world_affected)
-            self.myArrayforlowerSquareTitle.append(data3[0].world_death)
             self.myArrayforlowerSquareTitle.append(data3[0].world_tested)
+            self.myArrayforlowerSquareTitle.append(data3[0].world_affected)
             self.myArrayforlowerSquareTitle.append(data3[0].world_recovered)
+            self.myArrayforlowerSquareTitle.append(data3[0].world_death)
             
             self.myArrayfornumberupperTitleLabel1 = data4[0].karnali_affected
-            self.myArrayfornumberupperTitleLabel2 = data4[0].karnali_death
-            self.myArrayfornumberupperTitleLabel3 = data4[0].karnali_recovered
+            self.myArrayfornumberupperTitleLabel2 = data4[0].karnali_recovered
+            self.myArrayfornumberupperTitleLabel3 = data4[0].karnali_death
           print("fetched all data")
           //  print("\(self.myArrayfornumberupperTitleLabel1)")
            // print("\(self.myArrayfornumberupperTitleLabel2)")

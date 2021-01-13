@@ -57,8 +57,10 @@ class firstHomeScreen: UIViewController {
     
         //MARK: -ADD BUTTON1 TO FIRST CONTAINERVIEW
              view.addSubview(button1)
-             button1.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 64, width: 150, height: 42)
+             button1.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 54, width: 170, height: 42)
         
+        view.addSubview(arrowLabel3)
+        arrowLabel3.anchors(top: button1.topAnchor, topPad: 08, bottom: nil, bottomPad: 0, left: nil, leftPad: 0, right: button1.rightAnchor, rightPad: 04, height: 30, width: 30)
          return view
     }()
     
@@ -114,7 +116,7 @@ class firstHomeScreen: UIViewController {
             //MARK: -ADD NUMBERUPPERLABEL2 TO Second CONTAINERVIEW
             view .addSubview(numberlowerTitleLabel2)
             //numberlowerTitleLabel2.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            numberlowerTitleLabel2.homeAnchor(top: numberupperTitleLabel2.bottomAnchor, left: numberlowerTitleLabel1.rightAnchor, paddingTop: 12, paddingLeft: 48)
+            numberlowerTitleLabel2.homeAnchor(top: numberupperTitleLabel2.bottomAnchor, left: numberlowerTitleLabel1.rightAnchor, paddingTop: 12, paddingLeft: 40)
         
             
             //MARK: -ADD NUMBERUPPERLABEL3 TO Second CONTAINERVIEW
@@ -126,7 +128,7 @@ class firstHomeScreen: UIViewController {
             //MARK: -ADD NUMBERUPPERLABEL3 TO Second CONTAINERVIEW
             view .addSubview(numberupperTitleLabel3)
             numberupperTitleLabel3.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-            numberupperTitleLabel3.homeAnchor(right: view.rightAnchor, paddingRight: 16)
+            numberupperTitleLabel3.homeAnchor(right: view.rightAnchor, paddingRight: 32)
             
             
         //MARK: -ADD NUMBERLOWERLABEL3 TO Second CONTAINERVIEW
@@ -136,8 +138,10 @@ class firstHomeScreen: UIViewController {
             
             //MARK: -ADD BUTTON2 TO second CONTAINERVIEW
                  view.addSubview(button2)
-                 button2.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 64, width: 150, height: 42)
-        
+                 button2.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 54, width: 170, height: 42)
+            
+            view.addSubview(arrowLabel2)
+            arrowLabel2.anchors(top: button2.topAnchor, topPad: 08, bottom: nil, bottomPad: 0, left: nil, leftPad: 0, right: button2.rightAnchor, rightPad: 04, height: 30, width: 30)
      return view
       }()
     
@@ -166,7 +170,10 @@ class firstHomeScreen: UIViewController {
           
               //MARK: -ADD BUTTON3 TO second CONTAINERVIEW
                    view.addSubview(button3)
-                   button3.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 64, width: 150, height: 42)
+                   button3.homeAnchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 24, paddingRight: 54, width: 170, height: 42)
+                
+                view.addSubview(arrowLabel)
+                arrowLabel.anchors(top: button3.topAnchor, topPad: 08, bottom: nil, bottomPad: 0, left: nil, leftPad: 0, right: button3.rightAnchor, rightPad: 04, height: 30, width: 30)
           
        return view
         }()
@@ -187,7 +194,7 @@ class firstHomeScreen: UIViewController {
     let lowerTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.sizeToFit()
         label.text = "यदी तपाईंलाई कोरोना सम्बन्धी शंका लागेमा तुरुन्त डायल गर्नुहोस्"
         label.font = UIFont.systemFont(ofSize: 17)
@@ -317,7 +324,7 @@ class firstHomeScreen: UIViewController {
       let thirdlowerTitleLabel: UILabel = {
           let label = UILabel()
           label.textAlignment = .left
-          label.numberOfLines = 2
+          label.numberOfLines = 0
           label.sizeToFit()
           label.text = "डाक्टरहरुसँग परामर्श लिन चाहानुहुन्छ भने सम्पर्क गर्नुहोस"
           label.font = UIFont.systemFont(ofSize: 17)
@@ -348,6 +355,30 @@ class firstHomeScreen: UIViewController {
           return button
       }()
     
+    let arrowLabel: UIImageView = {
+            let v = UIImageView()
+          v.tintColor = .white
+            v.image = UIImage(systemName: "arrow.right")
+            v.contentMode = .scaleAspectFill
+            return v
+        }()
+    
+    let arrowLabel2: UIImageView = {
+               let v = UIImageView()
+             v.tintColor = .white
+               v.image = UIImage(systemName: "arrow.right")
+               v.contentMode = .scaleAspectFill
+               return v
+           }()
+    
+    let arrowLabel3: UIImageView = {
+               let v = UIImageView()
+             v.tintColor = .white
+               v.image = UIImage(systemName: "arrow.right")
+               v.contentMode = .scaleAspectFill
+               return v
+           }()
+    
     var myArrayfornumberupperTitleLabel1: String = ""
     var myArrayfornumberupperTitleLabel2: String = ""
     var myArrayfornumberupperTitleLabel3: String = ""
@@ -364,9 +395,9 @@ class firstHomeScreen: UIViewController {
         numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
         numberupperTitleLabel1.textColor = .orange
         numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
-        numberupperTitleLabel2.textColor = .red
+        numberupperTitleLabel2.textColor = .green
         numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel3
-        numberupperTitleLabel3.textColor = .green
+        numberupperTitleLabel3.textColor = .red
         
         
         //MARK:- SCROLLVIEW ADDING AND CONSTRAINING
@@ -420,9 +451,13 @@ class firstHomeScreen: UIViewController {
        
         do {
             print("i'm in first home screen \(appDelegate.myArrayfornumberupperTitleLabel1)")
-            numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
-            numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel3
-            numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel2
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.numberupperTitleLabel1.text = self.appDelegate.myArrayfornumberupperTitleLabel1
+                self.numberupperTitleLabel2.text = self.appDelegate.myArrayfornumberupperTitleLabel2
+                self.numberupperTitleLabel3.text = self.appDelegate.myArrayfornumberupperTitleLabel3
+            }
+         
+            
             try reachability?.startNotifier()
         } catch let error {
             print(error)
@@ -434,6 +469,31 @@ class firstHomeScreen: UIViewController {
         super.viewDidAppear(animated)
        
         print("***********viewdidAppear called**************")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.numberupperTitleLabel1.text = self.appDelegate.myArrayfornumberupperTitleLabel1
+            self.numberupperTitleLabel2.text = self.appDelegate.myArrayfornumberupperTitleLabel2
+            self.numberupperTitleLabel3.text = self.appDelegate.myArrayfornumberupperTitleLabel3
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.numberupperTitleLabel1.text = self.appDelegate.myArrayfornumberupperTitleLabel1
+            self.numberupperTitleLabel2.text = self.appDelegate.myArrayfornumberupperTitleLabel2
+            self.numberupperTitleLabel3.text = self.appDelegate.myArrayfornumberupperTitleLabel3
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.numberupperTitleLabel1.text = self.appDelegate.myArrayfornumberupperTitleLabel1
+            self.numberupperTitleLabel2.text = self.appDelegate.myArrayfornumberupperTitleLabel2
+            self.numberupperTitleLabel3.text = self.appDelegate.myArrayfornumberupperTitleLabel3
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.numberupperTitleLabel1.text = self.appDelegate.myArrayfornumberupperTitleLabel1
+            self.numberupperTitleLabel2.text = self.appDelegate.myArrayfornumberupperTitleLabel2
+            self.numberupperTitleLabel3.text = self.appDelegate.myArrayfornumberupperTitleLabel3
+        }
+        
+        numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
+        numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
+        numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel3
+        
         numberupperTitleLabel1.text = appDelegate.myArrayfornumberupperTitleLabel1
         numberupperTitleLabel2.text = appDelegate.myArrayfornumberupperTitleLabel2
         numberupperTitleLabel3.text = appDelegate.myArrayfornumberupperTitleLabel3
@@ -494,24 +554,24 @@ class firstHomeScreen: UIViewController {
           
             
             // create an actionSheet
-            let actionSheetController: UIAlertController = UIAlertController(title: "Swasthya Janakari", message: "Please call on following number", preferredStyle: .actionSheet)
+            let actionSheetController: UIAlertController = UIAlertController(title: "स्वास्थ्या जनाकारी", message: "यदी तपाईलाई स्वास्थ सम्बन्धी समस्या भएमा निम्न नम्बरहरुमा तुरुन्त कल गर्नुहोस्", preferredStyle: .actionSheet)
 
             // create an action
-            let firstAction: UIAlertAction = UIAlertAction(title: "Call to 9849255834", style: .default) { action -> Void in
+            let firstAction: UIAlertAction = UIAlertAction(title: "Call to ९८४९२५५८२४", style: .default) { action -> Void in
 
                 print("First Action pressed")
-                self.makePhoneCall(phoneNumber: "9849255834")
+                self.makePhoneCall(phoneNumber: "९८४९२५५८२४")
             }
 
-            let secondAction: UIAlertAction = UIAlertAction(title: "Call to 9851255839", style: .default) { action -> Void in
+            let secondAction: UIAlertAction = UIAlertAction(title: "Call to ९८५१२२५८३९", style: .default) { action -> Void in
 
                 print("Second Action pressed")
-                self.makePhoneCall(phoneNumber: "9851255839")
+                self.makePhoneCall(phoneNumber: "९८५१२२५८३९")
             }
-            let thirdAction: UIAlertAction = UIAlertAction(title: "Call to 9851255837", style: .default) { action -> Void in
+            let thirdAction: UIAlertAction = UIAlertAction(title: "Call to ९८५१२५५८३५", style: .default) { action -> Void in
 
                 print("Second Action pressed")
-                self.makePhoneCall(phoneNumber: "9851255837")
+                self.makePhoneCall(phoneNumber: "९८५१२५५८३५")
             }
 
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
@@ -583,6 +643,7 @@ class firstHomeScreen: UIViewController {
 
 //MARK: VIEW CONSTRAINT FOR HOMEANCHOR
 extension UIView {
+    
     
     func homeAnchor(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, paddingTop: CGFloat? = 0,
                 paddingLeft: CGFloat? = 0, paddingBottom: CGFloat? = 0, paddingRight: CGFloat? = 0, width: CGFloat? = nil, height: CGFloat? = nil) {

@@ -177,28 +177,10 @@ extension DoctorVC: UITableViewDelegate, UITableViewDataSource {
  
         let doctorVCmodel = doctorVCmodels[indexPath.section]
         cell.set(doctorVCmodel: doctorVCmodel)
-        cell.callButton.addTarget(self, action: #selector(button1SignIn), for: .touchUpInside)
-      
         return cell
         
     }
-    @objc func button1SignIn(){
-        self.makePhoneCall(phoneNumber: "9804088782")
-     }
-   func makePhoneCall(phoneNumber: String) {
-
-       if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
-
-           let alert = UIAlertController(title: ("Do you want to Call " + phoneNumber + "?"), message: nil, preferredStyle: .alert)
-           alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
-               UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
-           }))
-
-           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-           //vc.present(alert, animated: true, completion: nil)
-         alert.present(DoctorVC(), animated: true, completion: nil)
-       }
-   }
+ 
     
     
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -206,9 +188,9 @@ extension DoctorVC: UITableViewDelegate, UITableViewDataSource {
          let vc = DoctorDetailVC()
          vc.doctorNameLabel.text = doctorVCmodels[indexPath.section].name
          vc.specialistLabel.text = doctorVCmodels[indexPath.section].specialist
-    vc.emailLabel.text = doctorVCmodels[indexPath.section].email
-    vc.phoneLabel.text = doctorVCmodels[indexPath.section].mobile
-    vc.doctorBrief.text = doctorVCmodels[indexPath.section].brief
+         vc.emailLabel.text = doctorVCmodels[indexPath.section].email
+         vc.phoneLabel.text = doctorVCmodels[indexPath.section].mobile
+         vc.doctorBrief.text = doctorVCmodels[indexPath.section].brief
          vc.doctorsImageView.downloaded(from: URL(string: doctorVCmodels[indexPath.section].image)!)
          self.navigationController?.pushViewController(vc, animated: true)
      }
